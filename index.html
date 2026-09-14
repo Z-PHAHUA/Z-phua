@@ -1,0 +1,2315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Z-PAHUA — Sewing Patterns</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- =========================================================
+     Z-PAHUA CODE MAP
+     ---------------------------------------------------------
+     1) HTML  = page structure (this file's body)
+     2) CSS   = everything inside 
+     3) JS    = everything inside the MAIN <script> ... </script>
+
+     EASY SPLIT LATER:
+     - Move the 
+<!-- END CSS: everything above can be moved to css/style.css -->
+
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<!-- START HTML STRUCTURE: keep the body/markup in index.html -->
+<body>
+
+<div class="notice-banner" id="notice-banner">Z-PAHUA storefront · orders, accounts &amp; wishlist connected
+  <button class="notice-close" id="notice-close" aria-label="Dismiss notice">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 5l14 14M19 5L5 19"/></svg>
+  </button>
+</div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <button class="hamburger-btn" id="hamburger-toggle" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <a href="#/" class="logo" data-link>Z-PAHUA</a>
+    <nav class="nav-links">
+      <a href="#/" data-link data-route="/">Home</a>
+      <a href="#/shop" data-link data-route="/shop">Shop</a>
+      <a href="#/shop?cat=women" data-link data-route="/shop?cat=women">Women</a>
+      <a href="#/shop?cat=men" data-link data-route="/shop?cat=men">Men</a>
+      <a href="#/shop?cat=kids" data-link data-route="/shop?cat=kids">Kids</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="search-toggle" title="Search" aria-label="Search">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+      <a href="#/login" class="icon-btn" id="account-link" title="Sign in" aria-label="Account">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6"/></svg>
+      </a>
+      <button class="icon-btn" id="cart-toggle" title="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L4.5 2H2"/><circle cx="9" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg>
+        <span class="cart-badge" id="cart-count" style="display:none;">0</span>
+      </button>
+    </div>
+  </div>
+  <div class="search-bar-row" id="search-bar-row">
+    <div class="container">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="flex-shrink:0; color:var(--ink-soft);"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" id="header-search-input" placeholder="Search patterns, then press Enter…">
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+<nav class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-head">
+    <span class="logo font-display">Z-PAHUA</span>
+    <button id="mobile-nav-close" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <a href="#/" data-link data-route="/">Home</a>
+  <a href="#/shop" data-link data-route="/shop">Shop</a>
+  <a href="#/shop?cat=women" data-link data-route="/shop?cat=women">Women</a>
+  <a href="#/shop?cat=men" data-link data-route="/shop?cat=men">Men</a>
+  <a href="#/shop?cat=kids" data-link data-route="/shop?cat=kids">Kids</a>
+  <a href="#/login" data-link id="mobile-account-link">Sign in</a>
+</nav>
+
+<main>
+
+  <!-- HOME -->
+  <div class="page" id="page-home">
+    <div class="container">
+      <section class="hero">
+        <div>
+          <span class="eyebrow">Printed & delivered to your door</span>
+          <h1 class="font-display">Patterns worth<br><em>sewing.</em></h1>
+          <p>Z-PAHUA designs printed sewing patterns for garments you'll actually make and wear. Order online, and we print your pattern on A4 paper and deliver it straight to your door.</p>
+          <div class="hero-actions">
+            <a href="#/shop" data-link class="btn-primary">Shop patterns →</a>
+            <a href="#/shop?cat=women" data-link class="btn-ghost">Explore women's</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?auto=format&fit=crop&w=1200&q=80" alt="A printed garment pattern laid out with folded fabric" decoding="async">
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2 class="font-display">Shop by category</h2>
+          <a href="#/shop" data-link class="eyebrow">View all</a>
+        </div>
+        <div class="cat-grid" id="category-grid"></div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2 class="font-display">Best sellers</h2>
+          <a href="#/shop" data-link class="eyebrow">View all</a>
+        </div>
+        <div class="prod-grid" id="bestseller-grid"></div>
+      </section>
+
+      <section class="section reveal">
+        <div class="promo">
+          <span class="eyebrow" style="color:rgba(247,246,242,.7);">Just restocked</span>
+          <h2 class="font-display">The Ash Play Overalls Pattern is back in print.</h2>
+          <a href="#/product/ash-play-overalls-pattern" data-link class="btn-secondary">View the pattern</a>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <h2 class="font-display">New arrivals</h2>
+          <a href="#/shop" data-link class="eyebrow">View all</a>
+        </div>
+        <div class="prod-grid" id="new-grid"></div>
+      </section>
+    </div>
+
+    <section class="why reveal">
+      <div class="container why-grid">
+        <div class="why-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2F4A3D" stroke-width="1.5"><path d="M3 7h13v9H3z"/><path d="M16 10h3l2 3v3h-5z"/><circle cx="7.5" cy="18" r="1.5"/><circle cx="17.5" cy="18" r="1.5"/></svg>
+          <h3 class="font-display">Free delivery over $50</h3>
+          <p>Flat-rate delivery on every other order.</p>
+        </div>
+        <div class="why-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2F4A3D" stroke-width="1.5"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+          <h3 class="font-display">30-day returns</h3>
+          <p>Not right? Send it back, no questions asked.</p>
+        </div>
+        <div class="why-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2F4A3D" stroke-width="1.5"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>
+          <h3 class="font-display">Made to last</h3>
+          <p>Clear instructions, tested for an accurate fit.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="reveal">
+        <h2 class="font-display" style="font-size:26px; margin:80px 0 32px;">What customers say</h2>
+        <div class="rev-grid" id="reviews-grid"></div>
+      </section>
+    </div>
+  </div>
+
+  <!-- SHOP -->
+  <div class="page" id="page-shop">
+    <div class="container">
+      <div class="shop-head">
+        <span class="eyebrow" id="shop-eyebrow">All patterns</span>
+        <h1 class="font-display" style="font-size:34px; margin-top:8px;" id="shop-title">Shop</h1>
+      </div>
+      <button class="btn-secondary filters-toggle-btn" id="filters-toggle" type="button">Filters</button>
+      <div class="shop-layout">
+        <aside class="shop-filters" id="shop-filters-panel">
+          <div class="filter-group">
+            <h4>Category</h4>
+            <div id="cat-filters"></div>
+          </div>
+          <div class="filter-group">
+            <h4>Price</h4>
+            <div id="price-filters"></div>
+          </div>
+        </aside>
+        <div class="shop-main">
+          <div class="shop-toolbar">
+            <input class="search-input" id="shop-search" type="text" placeholder="Search patterns…">
+            <select class="sort-select" id="shop-sort">
+              <option value="featured">Featured</option>
+              <option value="newest">Newest</option>
+              <option value="bestselling">Best selling</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+            </select>
+          </div>
+          <div class="prod-grid" id="shop-grid"></div>
+          <div class="no-results" id="shop-empty" style="display:none;">No patterns match your filters.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <div class="page" id="page-product">
+    <div class="container">
+      <div class="pdp" id="pdp-root"></div>
+      <div id="related-root"></div>
+    </div>
+  </div>
+
+  <!-- LOGIN -->
+  <div class="page" id="page-login">
+    <div class="container">
+      <div class="auth-wrap">
+        <div class="auth-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6"/></svg>
+        </div>
+        <span class="eyebrow">Welcome back</span>
+        <h1 class="font-display">Sign in</h1>
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required autocomplete="current-password" placeholder="••••••••">
+          </div>
+          <div style="text-align:right; margin:-8px 0 16px;">
+            <a href="#/forgot-password" data-link style="font-size:12px; color:var(--ink-soft); text-decoration:underline;">Forgot password?</a>
+          </div>
+          <div class="auth-error" id="login-error" style="display:none;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+            <span id="login-error-text"></span>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;">Sign in</button>
+        </form>
+        <div class="auth-switch">Don't have an account? <a href="#/signup" data-link>Create one</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNUP -->
+  <div class="page" id="page-signup">
+    <div class="container">
+      <div class="auth-wrap">
+        <div class="auth-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+        </div>
+        <span class="eyebrow">Join Z-PAHUA</span>
+        <h1 class="font-display">Create your account</h1>
+        <form id="signup-form" novalidate>
+          <div class="field">
+            <label for="signup-name">Full name</label>
+            <input type="text" id="signup-name" required autocomplete="name" placeholder="Jordan Casey">
+          </div>
+          <div class="field">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" required autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" required minlength="6" autocomplete="new-password" placeholder="At least 6 characters">
+          </div>
+          <div class="auth-error" id="signup-error" style="display:none;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+            <span id="signup-error-text"></span>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;">Create account</button>
+        </form>
+        <div class="auth-switch">Already have an account? <a href="#/login" data-link>Sign in</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORGOT PASSWORD -->
+  <div class="page" id="page-forgot-password">
+    <div class="container">
+      <div class="auth-wrap">
+        <div class="auth-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="16" height="10" rx="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        </div>
+        <span class="eyebrow">Reset your password</span>
+        <h1 class="font-display">Forgot password</h1>
+        <p class="auth-hint">Enter the email on your account and we'll send you a link to reset your password.</p>
+        <form id="forgot-form" novalidate>
+          <div class="field">
+            <label for="forgot-email">Email</label>
+            <input type="email" id="forgot-email" required autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="auth-error" id="forgot-error" style="display:none;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+            <span id="forgot-error-text"></span>
+          </div>
+          <div class="auth-success" id="forgot-success" style="display:none;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>If an account exists for that email, we've sent a reset link.</span>
+          </div>
+          <button type="submit" class="btn-primary" id="forgot-submit-btn" style="width:100%;">Send reset link</button>
+        </form>
+        <div class="auth-switch"><a href="#/login" data-link>Back to sign in</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MY ACCOUNT -->
+  <div class="page" id="page-account">
+    <div class="container">
+      <div class="account-shell">
+        <section class="account-hero">
+          <div class="account-avatar" id="account-avatar">N</div>
+          <div class="account-hero-info">
+            <span class="eyebrow">My Account</span>
+            <h1 class="font-display" id="account-greeting">Hi there</h1>
+            <p class="account-email-sub" id="account-email-sub">Welcome to your Z-PAHUA account</p>
+          </div>
+          <button class="account-logout" id="account-logout-btn" type="button">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>
+            Log out
+          </button>
+        </section>
+
+        <div class="account-stats">
+          <a href="#/orders" data-link class="stat">
+            <span class="stat-num" id="stat-orders">0</span>
+            <span class="stat-label">Total orders</span>
+          </a>
+          <a href="#/wishlist" data-link class="stat">
+            <span class="stat-num" id="stat-wishlist">0</span>
+            <span class="stat-label">Wishlist</span>
+          </a>
+          <a href="#/cart" data-link class="stat">
+            <span class="stat-num" id="stat-cart">0</span>
+            <span class="stat-label">In your bag</span>
+          </a>
+        </div>
+
+        <div class="account-card">
+          <div class="card-title">Profile details</div>
+          <div class="field" style="margin-bottom:14px;"><label>Full name</label><input type="text" id="account-name-display" disabled></div>
+          <div class="field" style="margin-bottom:0;"><label>Email</label><input type="email" id="account-email-display" disabled></div>
+        </div>
+
+        <div class="account-quick-links">
+          <a href="#/orders" data-link class="account-quick-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v4H4z"/><path d="M6 8v12h12V8"/><path d="M10 12h4"/></svg>
+            <div><strong>My Orders</strong><span>Track and review past orders</span></div>
+          </a>
+          <a href="#/wishlist" data-link class="account-quick-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7.5-4.6-10-9.3C.6 8.4 2.4 5 6 5c2 0 3.5 1 6 3.6C14.5 6 16 5 18 5c3.6 0 5.4 3.4 4 6.7C19.5 16.4 12 21 12 21z"/></svg>
+            <div><strong>Wishlist</strong><span>Items you've saved for later</span></div>
+          </a>
+          <a href="#/admin" data-link class="account-quick-link" id="admin-panel-link" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6M7 16h8"/></svg>
+            <div><strong>Admin Panel</strong><span>Manage orders and update status</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDERS -->
+  <div class="page" id="page-orders">
+    <div class="container">
+      <div class="page-title">
+        <span class="eyebrow">Account · Track an order</span>
+        <h1 class="font-display">My Orders</h1>
+        <p style="color:var(--ink-soft); margin-top:8px; max-width:560px; font-size:14px; line-height:1.6;">Review what you've ordered, what you paid, and where it's headed.</p>
+      </div>
+      <div class="shell" style="max-width:760px; padding:20px 0 96px;" id="orders-list"></div>
+    </div>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div class="page" id="page-admin">
+    <div class="admin-layout">
+      <aside class="admin-sidebar" id="admin-sidebar">
+        <div class="admin-brand"><div class="admin-brand-mark">Z</div><div><strong>Z-PAHUA</strong><span>Admin Panel</span></div></div>
+        <nav class="admin-nav">
+          <button class="admin-nav-item active" data-admin-section="dashboard"><span>⌂</span>Dashboard</button>
+          <button class="admin-nav-item" data-admin-section="orders"><span>▣</span>Orders <b id="admin-nav-order-count">0</b></button>
+          <button class="admin-nav-item" data-admin-section="products"><span>◇</span>Products</button>
+          <button class="admin-nav-item" data-admin-section="customers"><span>♙</span>Customers</button>
+          <button class="admin-nav-item" data-admin-section="storage"><span>▤</span>Storage</button>
+          <button class="admin-nav-item" data-admin-section="analytics"><span>▥</span>Analytics</button>
+          <div class="admin-nav-divider"></div>
+          <button class="admin-nav-item" data-admin-action="view-store"><span>↗</span>View Store</button>
+          <button class="admin-nav-item" data-admin-action="logout"><span>⇥</span>Log out</button>
+        </nav>
+        <div class="admin-sidebar-usage">
+          <div><span>Storage</span><strong id="admin-side-storage">—</strong></div><div class="side-bar"><i id="admin-side-storage-bar"></i></div>
+          <div class="side-usage-bottom"><span>Database</span><strong id="admin-side-db">—</strong></div><div class="side-bar"><i id="admin-side-db-bar"></i></div>
+        </div>
+        <div class="admin-sidebar-foot">Z-PAHUA · Store Administration<br><small>Live Supabase data</small></div>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-topbar">
+          <button class="admin-mobile-menu" id="admin-mobile-menu" type="button">☰</button><div class="admin-mobile-backdrop" id="admin-mobile-backdrop" aria-hidden="true"></div>
+          <div class="admin-search"><span>⌕</span><input id="admin-global-search" placeholder="Search orders, products, customers…"><kbd>/</kbd></div>
+          <div class="admin-top-actions"><button type="button" class="admin-icon-btn" title="Refresh data" id="admin-top-refresh">↻</button><button type="button" class="admin-store-btn" data-admin-action="view-store">View Store ↗</button><div class="admin-avatar" id="admin-avatar">A</div><div class="admin-user-label"><strong id="admin-user-name">Admin</strong><span>Administrator</span></div></div>
+        </header>
+
+        <div class="admin-content">
+          <section class="admin-view active" id="admin-view-dashboard">
+            <div class="admin-page-heading"><div><span class="eyebrow">Administration</span><h1>Dashboard</h1><p>Welcome back, Admin. Here's what's happening with your store today.</p></div><button class="btn-secondary" id="admin-dashboard-refresh" type="button">↻ Refresh data</button></div>
+            <div class="admin-kpi-grid" id="admin-kpi-grid"></div>
+            <div class="admin-dashboard-grid top-grid">
+              <section class="admin-dash-card sales-card"><div class="dash-card-head"><div><h2>Sales Overview</h2><p>Revenue from your recent orders</p></div><strong id="admin-revenue-total">Rs. 0</strong></div><div class="sales-chart" id="admin-sales-chart"></div><div class="chart-legend"><i></i>Revenue</div></section>
+              <section class="admin-dash-card"><div class="dash-card-head"><div><h2>Order Status</h2><p>Current order distribution</p></div></div><div class="status-dashboard" id="admin-status-dashboard"></div></section>
+              <section class="admin-dash-card quick-card"><div class="dash-card-head"><div><h2>Quick Actions</h2><p>Common store tasks</p></div></div><div class="quick-actions"><button data-admin-section="products"><b>＋</b>Add Product</button><button data-admin-section="orders"><b>▣</b>Manage Orders</button><button data-admin-section="customers"><b>♙</b>View Customers</button><button data-admin-section="storage"><b>⌫</b>Storage Cleanup</button></div></section>
+            </div>
+            <div class="admin-dashboard-grid bottom-grid">
+              <section class="admin-dash-card"><div class="dash-card-head"><div><h2>Low Stock Alerts</h2><p>Products that need attention</p></div><button class="dash-link" data-admin-section="products">View all</button></div><div id="admin-low-stock"></div></section>
+              <section class="admin-dash-card"><div class="dash-card-head"><div><h2>Best Selling Products</h2><p>Top products by units sold</p></div></div><div id="admin-best-selling"></div></section>
+              <section class="admin-dash-card usage-dash"><div class="dash-card-head"><div><h2>Database & Storage</h2><p>Live usage from Supabase</p></div><button class="dash-link" id="admin-usage-dashboard-refresh">Refresh</button></div><div id="admin-dashboard-usage"></div></section>
+            </div>
+            <div class="admin-dashboard-grid recent-grid"><section class="admin-dash-card"><div class="dash-card-head"><div><h2>Recent Orders</h2><p>Latest customer activity</p></div><button class="dash-link" data-admin-section="orders">View all</button></div><div id="admin-recent-orders"></div></section><section class="admin-dash-card"><div class="dash-card-head"><div><h2>Store Summary</h2><p>At-a-glance account information</p></div></div><div class="summary-list" id="admin-store-summary"></div></section></div>
+          </section>
+
+          <section class="admin-view" id="admin-view-orders">
+            <div class="admin-page-heading"><div><span class="eyebrow">Store operations</span><h1>Orders</h1><p>Manage customer orders and update their status.</p></div><button class="btn-secondary" id="admin-refresh-btn" type="button">↻ Refresh orders</button></div>
+            <div class="admin-toolbar"><div class="field" style="min-width:220px;margin:0;"><label for="admin-status-filter">Filter orders</label><select id="admin-status-filter" class="admin-status-select" style="width:100%;"><option value="all">All orders</option><option value="Pending">Pending</option><option value="Processing">Processing</option><option value="Shipped">Shipped</option><option value="Delivered">Delivered</option><option value="Cancelled">Cancelled</option></select></div></div>
+            <div id="admin-orders-list"></div>
+          </section>
+
+          <section class="admin-view" id="admin-view-products">
+            <div class="admin-page-heading"><div><span class="eyebrow">Catalog</span><h1>Products</h1><p>Add, edit, hide, show and manage your live product catalog.</p></div><button class="btn-secondary" id="admin-new-product-btn" type="button">＋ Add product</button></div>
+            <form class="admin-product-form" id="admin-product-form" style="display:none;">
+          <input type="hidden" id="admin-product-id">
+          <div class="admin-form-grid">
+            <div class="field"><label for="admin-product-name">Product name</label><input id="admin-product-name" required></div>
+            <div class="field"><label for="admin-product-slug">Slug</label><input id="admin-product-slug" placeholder="e.g. straight-leg-trouser-pattern"></div>
+            <div class="field full"><label for="admin-product-description">Description</label><textarea id="admin-product-description"></textarea></div>
+            <div class="field"><label for="admin-product-price">Price</label><input id="admin-product-price" type="number" min="0" step="0.01" required></div>
+            <div class="field"><label for="admin-product-discount">Discount price (optional)</label><input id="admin-product-discount" type="number" min="0" step="0.01"></div>
+            <div class="field"><label for="admin-product-stock">Stock</label><input id="admin-product-stock" type="number" min="0" step="1" value="0"></div>
+            <div class="field"><label for="admin-product-category">Category</label><select id="admin-product-category" required></select></div>
+            <div class="field"><label for="admin-product-rating">Rating</label><input id="admin-product-rating" type="number" min="0" max="5" step="0.1" value="0"></div>
+            <div class="field"><label for="admin-product-reviews">Review count</label><input id="admin-product-reviews" type="number" min="0" step="1" value="0"></div>
+            <div class="field full">
+              <label>Product images</label>
+              <div class="admin-upload-box">
+                <input type="file" id="admin-product-image-files" accept="image/*" multiple>
+                <span class="admin-upload-note">Choose downloaded images from your PC. They will be uploaded to Supabase Storage when you save the product.</span>
+              </div>
+            </div>
+            <div class="field full"><label for="admin-product-images">Image URLs (optional)</label><textarea id="admin-product-images" placeholder="One image URL per line"></textarea></div>
+            <div class="field full"><label for="admin-product-sizes">Sizes</label><input id="admin-product-sizes" placeholder="28, 30, 32, 34, 36"><div id="admin-size-prices" class="size-price-grid"></div><div class="size-price-note">Set a different price for each size. Leave a price empty to use the product's normal price.</div></div>
+            <div class="admin-checks full">
+              <label><input type="checkbox" id="admin-product-bestseller"> Bestseller</label>
+              <label><input type="checkbox" id="admin-product-new"> New product</label>
+              <label><input type="checkbox" id="admin-product-active" checked> Active / visible</label>
+            </div>
+          </div>
+          <div class="admin-form-actions">
+            <button class="btn-primary" type="submit" id="admin-product-save">Save product</button>
+            <button class="btn-secondary" type="button" id="admin-product-cancel">Cancel</button>
+          </div>
+        </form>
+            <div id="admin-products-list" class="admin-product-list"></div>
+          </section>
+
+          <section class="admin-view" id="admin-view-customers">
+            <div class="admin-page-heading"><div><span class="eyebrow">Customers</span><h1>Customers</h1><p>Customer accounts and order activity.</p></div></div>
+            <div class="admin-dash-card"><div id="admin-customers-list"></div></div>
+          </section>
+
+          <section class="admin-view" id="admin-view-storage">
+            <div class="admin-page-heading"><div><span class="eyebrow">Supabase</span><h1>Storage</h1><p>Monitor database and product image storage.</p></div><button class="btn-secondary" id="admin-usage-refresh-btn" type="button">↻ Refresh usage</button></div>
+            <section class="usage-panel"><div class="usage-head"><div><span class="eyebrow">Supabase · Live usage</span><h2>Database & Storage</h2><p style="color:var(--ink-soft);margin-top:7px;font-size:13px;line-height:1.5;">See current database size, product image storage, files and accounts.</p></div></div><div class="usage-grid" id="admin-usage-grid"><div class="usage-card"><div class="usage-label">Database</div><div class="usage-value">Loading…</div></div><div class="usage-card"><div class="usage-label">Product Storage</div><div class="usage-value">Loading…</div></div><div class="usage-card"><div class="usage-label">Storage Files</div><div class="usage-value">Loading…</div></div><div class="usage-card"><div class="usage-label">Accounts</div><div class="usage-value">Loading…</div></div></div><div class="usage-note">Usage is read directly from Supabase. The reference limits shown are the current Free-plan quotas: 500 MB database size and 1 GB file storage.</div></section>
+            <section class="admin-dash-card"><div class="dash-card-head"><div><h2>Storage Cleanup</h2><p>Review product images currently referenced by your catalog.</p></div></div><div id="admin-storage-cleanup"></div></section>
+          </section>
+
+          <section class="admin-view" id="admin-view-analytics">
+            <div class="admin-page-heading"><div><span class="eyebrow">Reports</span><h1>Analytics</h1><p>Simple store performance insights from your Supabase orders and products.</p></div></div>
+            <div class="admin-dashboard-grid analytics-grid"><section class="admin-dash-card"><div class="dash-card-head"><div><h2>Sales by Status</h2><p>Order value grouped by status</p></div></div><div id="admin-analytics-status"></div></section><section class="admin-dash-card"><div class="dash-card-head"><div><h2>Catalog Health</h2><p>Product visibility and stock</p></div></div><div id="admin-analytics-catalog"></div></section></div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- WISHLIST -->
+  <div class="page" id="page-wishlist">
+    <div class="container">
+      <div class="page-title" style="display:flex; align-items:center; gap:14px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:28px; height:28px; color:var(--forest);"><path d="M12 21s-7.5-4.6-10-9.3C.6 8.4 2.4 5 6 5c2 0 3.5 1 6 3.6C14.5 6 16 5 18 5c3.6 0 5.4 3.4 4 6.7C19.5 16.4 12 21 12 21z"/></svg>
+        <div>
+          <span class="eyebrow">Saved for later</span>
+          <h1 class="font-display">Wishlist</h1>
+        </div>
+      </div>
+      <div class="prod-grid" id="wishlist-grid" style="padding-bottom:96px;"></div>
+      <div class="no-results" id="wishlist-empty" style="display:none; padding-bottom:96px;">
+        Your wishlist is empty. <a href="#/shop" data-link style="text-decoration:underline;">Browse patterns</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART (full page) -->
+  <div class="page" id="page-cart">
+    <div class="container">
+      <div class="page-title">
+        <span class="eyebrow">Your basket</span>
+        <h1 class="font-display">Your Cart</h1>
+        <p style="color:var(--ink-soft); margin-top:8px; font-size:14px; line-height:1.6;">Review your patterns below, then head to checkout when you're ready.</p>
+      </div>
+      <div class="cart-page-layout" id="cart-page-layout">
+        <div class="cart-page-items" id="cart-page-items"></div>
+        <div class="cart-page-foot" id="cart-page-foot"></div>
+      </div>
+      <div class="no-results" id="cart-page-empty" style="display:none; padding-bottom:96px;">
+        Your cart is empty. <a href="#/shop" data-link style="text-decoration:underline;">Continue shopping</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT -->
+  <div class="page" id="page-checkout">
+    <div class="container">
+      <div style="padding:48px 0 8px;">
+        <span class="eyebrow">Almost there</span>
+        <h1 class="font-display" style="font-size:30px; margin-top:8px;">Checkout</h1>
+      </div>
+      <div class="checkout-layout" id="checkout-layout" style="margin-top:24px;">
+        <form id="checkout-form" novalidate>
+          <div class="checkout-section-title">Delivery details</div>
+          <div class="form-grid">
+            <div class="field"><label for="checkout-name">Full name</label><input type="text" id="checkout-name" required placeholder="Jordan Casey"></div>
+            <div class="field"><label for="checkout-email">Email</label><input type="email" id="checkout-email" required placeholder="you@example.com"></div>
+            <div class="field"><label for="checkout-phone">Phone</label><input type="tel" id="checkout-phone" required placeholder="555-0100"></div>
+            <div class="field"><label for="checkout-city">City</label><input type="text" id="checkout-city" required placeholder="Burlington"></div>
+            <div class="field" style="grid-column:1/-1;"><label for="checkout-address">Full delivery address</label><input type="text" id="checkout-address" required placeholder="1 Main St"></div>
+            <div class="field"><label for="checkout-postal">Postal / ZIP code</label><input type="text" id="checkout-postal" required placeholder="05401"></div>
+          </div>
+
+          <div class="checkout-section-title" style="margin-top:8px;">Payment method</div>
+          <label class="payment-option">
+            <input type="radio" checked readonly>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:20px; height:20px; color:var(--forest); flex-shrink:0;"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+            <div><strong>Cash on Delivery</strong><span>Pay when your printed pattern is delivered. Online payment coming soon.</span></div>
+          </label>
+
+          <div class="auth-error" id="checkout-error" style="display:none; margin-top:20px;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+            <span id="checkout-error-text"></span>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%; margin-top:20px;">Place order (Cash on Delivery)</button>
+        </form>
+        <div class="cart-page-foot" id="checkout-summary"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="page" id="page-about">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">About</span>
+        <h1 class="font-display">Our story</h1>
+        <p>Printed sewing patterns, designed with care and delivered to your door.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="static-page">
+        <p class="lede">Z-PAHUA began as a small pattern studio dedicated to one idea: that a well-made sewing pattern should be easy to follow and satisfying to sew from, start to finish.</p>
+        <p>We design and print sewing patterns for garments across women's, men's, and kids' wear. Every order is printed on A4 paper, numbered and tiled for easy assembly, and physically delivered to your address — no printer or download required on your end.</p>
+
+        <p class="story-note">"A pattern is a promise: that the person holding it can trust each step and end up with something they love to wear."</p>
+
+        <div class="stats-band">
+          <div class="about-stat"><span class="num">9</span><span class="lbl">Patterns in print</span></div>
+          <div class="about-stat"><span class="num">3–7</span><span class="lbl">Day delivery</span></div>
+          <div class="about-stat"><span class="num">30</span><span class="lbl">Day reprint window</span></div>
+        </div>
+
+        <div class="info-card-grid">
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5Z"/></svg>
+            <h3>Made to last</h3>
+            <p>Clear instructions, tested for an accurate fit.</p>
+          </div>
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <h3>Slow by design</h3>
+            <p>No trend cycles — just patterns we'd sew ourselves.</p>
+          </div>
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+            <h3>Chosen with care</h3>
+            <p>A small, focused range, not an endless catalog.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="page" id="page-contact">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Get in touch</span>
+        <h1 class="font-display">Contact us</h1>
+        <p>Questions about an order, a product, or anything else — we're happy to help.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="contact-page">
+        <div class="contact-card">
+          <div class="card-title">Send a message</div>
+          <form id="contact-form" novalidate>
+            <div class="field"><label for="contact-name">Name</label><input type="text" id="contact-name" required placeholder="Your name"></div>
+            <div class="field"><label for="contact-email">Email</label><input type="email" id="contact-email" required placeholder="you@example.com"></div>
+            <div class="field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" required rows="4" placeholder="How can we help?"></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;">Send message</button>
+          </form>
+        </div>
+        <div class="contact-card">
+          <div class="card-title">Contact details</div>
+          <ul class="contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+              <div><strong>Email</strong><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="09616c6565664967667b7d616f606c656d24797b6c7f606c7e276a6664">[email&#160;protected]</a></span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+              <div><strong>Phone</strong><span>+1 (555) 018-2231</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div><strong>Studio</strong><span>142 Foundry St, Burlington, VT</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              <div><strong>Hours</strong><span>Mon–Fri, 9am–5pm ET</span></div>
+            </li>
+          </ul>
+          <div style="margin-top:22px; padding-top:20px; border-top:1px solid var(--line);">
+            <div class="checkout-section-title" style="margin-bottom:10px;">Delivery estimate</div>
+            <p style="font-size:13px; color:var(--ink-soft); line-height:1.6;">Most patterns are printed and delivered within 3–7 business days. Orders over $50 ship free.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="page" id="page-faq">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Support</span>
+        <h1 class="font-display">Frequently asked questions</h1>
+        <p>Everything you need to know about ordering, shipping, and returns.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="faq-list">
+        <details class="faq-item"><summary>How long does shipping take?</summary><p>Most orders arrive within 3–7 business days. You'll get a tracking link by email as soon as your order ships.</p></details>
+        <details class="faq-item"><summary>What is your return policy?</summary><p>Since every pattern is printed specifically for your order, we can't accept returns for a change of mind — but if your pattern arrives damaged or misprinted, we'll reprint and redeliver it free within 30 days. See our <a href="#/returns" data-link style="color:var(--forest); text-decoration:underline;">Returns page</a> for details.</p></details>
+        <details class="faq-item"><summary>Do you ship internationally?</summary><p>Currently we ship within the country only. International shipping is on our roadmap.</p></details>
+        <details class="faq-item"><summary>How do I track my order?</summary><p>Sign in and visit My Orders to see the status of any order you've placed.</p></details>
+        <details class="faq-item"><summary>What payment methods do you accept?</summary><p>Right now we accept Cash on Delivery only. Card payments are coming soon.</p></details>
+
+        <div class="faq-cta">
+          <h3 class="font-display">Still have a question?</h3>
+          <p>Our small team is happy to help with anything from sizing to delivery.</p>
+          <a href="#/contact" data-link class="btn-primary">Contact us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHIPPING & RETURNS -->
+  <div class="page" id="page-shipping">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Support</span>
+        <h1 class="font-display">Shipping &amp; Delivery</h1>
+        <p>What to expect after you place an order.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="static-page">
+        <div class="info-card-grid" style="margin-top:0;">
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8Z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <h3>3–7 day delivery</h3>
+            <p>Printed and delivered, most locations.</p>
+          </div>
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L4.5 2H2"/><circle cx="9" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg>
+            <h3>Free over $50</h3>
+            <p>Flat $8 delivery on smaller orders.</p>
+          </div>
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+            <h3>Cash on Delivery</h3>
+            <p>Pay when your pattern arrives.</p>
+          </div>
+        </div>
+        <div class="policy-block">
+          <h2>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8Z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            How delivery works
+          </h2>
+          <p>Once you place an order, we print your pattern on A4 paper, tile and number the pages, and pack it for delivery. Orders are processed within 1–2 business days, and standard delivery takes 3–7 business days depending on your location. Orders over $50 ship free.</p>
+          <ol class="policy-steps">
+            <li><strong>We print</strong> — your pattern is tiled and numbered on A4 sheets.</li>
+            <li><strong>We pack</strong> — a layout guide and instructions are included.</li>
+            <li><strong>We deliver</strong> — most locations within 3–7 business days.</li>
+          </ol>
+        </div>
+        <div class="policy-block">
+          <h2>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+            Payment
+          </h2>
+          <p>We currently accept Cash on Delivery only — you pay in person when your pattern is delivered. Card payments are coming soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RETURNS -->
+  <div class="page" id="page-returns">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Support</span>
+        <h1 class="font-display">Returns</h1>
+        <p>What to do if something isn't right with your order.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="static-page">
+        <div class="info-card-grid" style="margin-top:0;">
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+            <h3>30-day window</h3>
+            <p>From the date your pattern is delivered.</p>
+          </div>
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>
+            <h3>Misprints covered</h3>
+            <p>Damaged or incorrect prints replaced free.</p>
+          </div>
+          <div class="info-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            <h3>Just contact us</h3>
+            <p>We'll walk you through the next steps.</p>
+          </div>
+        </div>
+        <div class="policy-block">
+          <h2>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+            Our returns policy
+          </h2>
+          <p>Because every pattern is printed specifically for your order, we're not able to accept returns simply for a change of mind. If your pattern arrives damaged, misprinted, or isn't what you ordered, let us know within 30 days of delivery and we'll reprint and redeliver it at no extra cost.</p>
+        </div>
+        <div class="policy-block">
+          <h2>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            How to request a reprint
+          </h2>
+          <p>Visit our <a href="#/contact" data-link style="color:var(--forest); text-decoration:underline;">Contact page</a> with your order number and a photo of the issue, and we'll take it from there.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div class="page" id="page-privacy">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Legal</span>
+        <h1 class="font-display">Privacy Policy</h1>
+        <p>What we collect, and how it's used.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="static-page">
+        <h2>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          What we collect
+        </h2>
+        <p>We collect only the information needed to process your orders and improve your shopping experience — your name, email, shipping address, and order history.</p>
+        <h2>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5Z"/></svg>
+          How it's protected
+        </h2>
+        <p>We never sell your personal information to third parties. Data you enter in this preview — your account, cart, and wishlist are securely connected to the store database when you are signed in.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TERMS & CONDITIONS -->
+  <div class="page" id="page-terms">
+    <div class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Legal</span>
+        <h1 class="font-display">Terms &amp; Conditions</h1>
+        <p>The basics of using this site.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="static-page">
+        <h2>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg>
+          Using this site
+        </h2>
+        <p>By using this site you agree to purchase patterns for personal, non-commercial sewing use, provide accurate order information, and use the site in accordance with applicable law. Garments sewn from our patterns are for personal use and gifting — patterns may not be reproduced or resold.</p>
+        <h2>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+          Pricing &amp; availability
+        </h2>
+        <p>All pattern descriptions, images, and pricing are subject to change without notice.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 404 -->
+  <div class="page" id="page-404">
+    <div class="container" style="padding:100px 0; text-align:center;">
+      <h1 class="font-display" style="font-size:32px;">Page not found in this preview</h1>
+      <p style="color:var(--ink-soft); margin-top:12px;">This route needs the live Supabase-backed app.</p>
+      <a href="#/" data-link class="btn-primary" style="margin-top:24px;">Back home</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <span class="logo font-display">Z-PAHUA</span>
+        <p style="margin-top:14px; max-width:280px; font-size:14px; color:var(--ink-soft);">Printed sewing patterns for women's, men's, and kids' garments — delivered to your door.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#/shop" data-link>All patterns</a></li>
+          <li><a href="#/shop?cat=women" data-link>Women</a></li>
+          <li><a href="#/shop?cat=men" data-link>Men</a></li>
+          <li><a href="#/shop?cat=kids" data-link>Kids</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#/shipping-returns" data-link>Shipping &amp; Delivery</a></li>
+          <li><a href="#/returns" data-link>Returns</a></li>
+          <li><a href="#/orders" data-link>Track an order</a></li>
+          <li><a href="#/contact" data-link>Contact</a></li>
+          <li><a href="#/faq" data-link>FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#/about" data-link>About</a></li>
+          <li><a href="#/account" data-link>My Account</a></li>
+          <li><a href="#/wishlist" data-link>Wishlist</a></li>
+          <li><a href="#/cart" data-link>Cart</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Z-PAHUA. Static preview build.</span>
+      <div style="display:flex; gap:16px;">
+        <a href="#/privacy-policy" data-link>Privacy Policy</a>
+        <a href="#/terms" data-link>Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-head">
+    <h3>Your cart</h3>
+    <button id="cart-close" aria-label="Close cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-foot" id="cart-foot"></div>
+</div>
+
+<div class="toast" id="toast"><span class="toast-dot"></span><span id="toast-msg"></span></div>
+
+<button class="backtop" id="backtop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- START JAVASCRIPT
+     Keep Supabase CDN first. The large script below is the app code.
+     It is intentionally kept in ONE JS block so the current global functions
+     and inline handlers keep working when you later move it to js/app.js.
+     -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
+/* ---------- Data (mirrors lib/mock-data.ts) ---------- */
+// Verified real Unsplash garment/apparel photos (not abstract placeholders) —
+// each of these photo IDs was confirmed to resolve before use.
+const GARMENT_PHOTOS = {
+  tee1: "1620799139507-2a76f79a2f4d",      // white t-shirt flat lay
+  tee2: "1521572163474-6864f9cf17ab",      // white crew-neck tees
+  shirt: "1543322748-33df6d3db806",        // folded shirt flat lay
+  denim: "1515459961680-58264ee27219",     // folded denim / trousers
+};
+// Performance: request smaller compressed source images; CSS still controls display size.
+const img = (key) => `https://images.unsplash.com/photo-${GARMENT_PHOTOS[key]}?auto=format&fit=crop&w=900&q=72`;
+const imgSm = (key) => `https://images.unsplash.com/photo-${GARMENT_PHOTOS[key]}?auto=format&fit=crop&w=650&q=72`;
+const categories = [
+  { id:"c1", name:"Men", slug:"men", image:imgSm("shirt") },
+  { id:"c2", name:"Women", slug:"women", image:imgSm("tee2") },
+  { id:"c3", name:"Kids", slug:"kids", image:imgSm("tee1") },
+  { id:"c4", name:"Shirts", slug:"shirts", image:imgSm("tee1") },
+  { id:"c5", name:"Pants", slug:"pants", image:imgSm("denim") },
+  { id:"c6", name:"Dresses", slug:"dresses", image:imgSm("tee2") },
+  { id:"c7", name:"Other Patterns", slug:"other-patterns", image:imgSm("shirt") },
+];
+let products = [
+  { id:"p1", name:"Fielder Overshirt Pattern", slug:"fielder-overshirt-pattern",
+    description:"A printed sewing pattern for a heavyweight overshirt cut for layering, with a single chest pocket and relaxed fit. Tiled across A4 sheets with numbered pages, a layout guide, and step-by-step sewing instructions, printed and delivered to your door.",
+    price:18, discountPrice:14, stock:14, category:"c4", rating:4.8, reviewCount:36,
+    bestseller:true, images:[img("shirt"),img("tee2")], sizes:["S","M","L","XL"] },
+  { id:"p2", name:"Belmont Wrap Blouse Pattern", slug:"belmont-wrap-blouse-pattern",
+    description:"A printed sewing pattern for a soft wrap blouse with a tie waist and three-quarter sleeve. Includes seam allowances, a fabric guide, and clear assembly diagrams, printed on A4 sheets and shipped to you.",
+    price:16, discountPrice:null, stock:22, category:"c2", rating:4.6, reviewCount:21,
+    isNew:true, images:[img("tee2")], sizes:["XS","S","M","L"] },
+  { id:"p3", name:"Marl Wrap Dress Pattern", slug:"marl-wrap-dress-pattern",
+    description:"A printed sewing pattern for a flattering wrap dress with an adjustable waist tie. Every copy is printed on A4 paper, numbered for easy assembly, and delivered by post — ready to tape together and cut.",
+    price:20, discountPrice:16, stock:9, category:"c6", rating:4.9, reviewCount:58,
+    bestseller:true, images:[img("tee1")], sizes:["XS","S","M","L","XL"] },
+  { id:"p4", name:"Selvage Straight-Leg Trouser Pattern", slug:"selvage-straight-leg-trouser-pattern",
+    description:"A printed sewing pattern for a tapered, straight-leg trouser with a flat-front waistband. Printed on A4 sheets with a full cutting layout and construction guide, delivered straight to your door.",
+    price:19, discountPrice:null, stock:31, category:"c5", rating:4.7, reviewCount:44,
+    images:[img("denim")], sizes:["28","30","32","34","36"] },
+  { id:"p5", name:"Ash Play Overalls Pattern", slug:"ash-play-overalls-pattern",
+    description:"A printed sewing pattern for durable kids' play overalls with adjustable straps and roomy front pockets. Printed on A4 paper and delivered to your door, ready to trace, tape, and cut.",
+    price:14, discountPrice:11, stock:6, category:"c3", rating:4.9, reviewCount:12,
+    isNew:true, images:[img("tee1")], sizes:["2T","3T","4T","5","6"] },
+  { id:"p6", name:"Rosette Popover Dress Pattern", slug:"rosette-popover-dress-pattern",
+    description:"A printed sewing pattern for a simple popover dress with a gathered skirt and covered buttons at the back. Tiled across numbered A4 sheets with a printed layout guide, delivered to your address.",
+    price:15, discountPrice:null, stock:17, category:"c6", rating:4.5, reviewCount:19,
+    images:[img("tee2")], sizes:["2","3","4","5","6","7","8"] },
+  { id:"p7", name:"Heavyweight Pocket Tee Pattern", slug:"heavyweight-pocket-tee-pattern",
+    description:"A printed sewing pattern for a boxy, heavyweight pocket tee with a relaxed fit. Includes a printed cutting layout and construction steps, printed on A4 sheets and physically delivered to you.",
+    price:12, discountPrice:9, stock:40, category:"c4", rating:4.7, reviewCount:29,
+    bestseller:true, images:[img("tee1"),img("tee2")], sizes:["S","M","L","XL","XXL"] },
+  { id:"p8", name:"Boat-Neck Tee Pattern", slug:"boat-neck-tee-pattern",
+    description:"A printed sewing pattern for a Breton-style boat-neck tee in mid-weight jersey with a slightly cropped sleeve. Printed on A4 paper with numbered pages and delivered to your door.",
+    price:12, discountPrice:null, stock:26, category:"c4", rating:4.5, reviewCount:17,
+    isNew:true, images:[img("tee1")], sizes:["XS","S","M","L"] },
+  { id:"p9", name:"Studio Apron Pattern", slug:"studio-apron-pattern",
+    description:"A printed sewing pattern for a full-coverage studio apron with an adjustable neck strap and a large front pocket. A quick, beginner-friendly project — printed on A4 sheets and delivered to your address.",
+    price:10, discountPrice:8, stock:33, category:"c7", rating:4.6, reviewCount:41,
+    images:[img("shirt")], sizes:["One size"] },
+];
+const reviews = [
+  { name:"Marcus D.", rating:5, comment:"Pages lined up perfectly and the instructions were easy to follow — my overshirt came out great." },
+  { name:"Aisha K.", rating:4, comment:"Sizing ran slightly large, so I'd size down. The printed pages were clear and well numbered." },
+  { name:"Priya S.", rating:5, comment:"Loved that everything arrived printed and ready to tape together — no printer needed on my end." },
+];
+const catName = (id) => categories.find(c=>c.id===id)?.name || "";
+
+/* ---------- Cart (persisted to localStorage, same idea as cart-context.tsx) ---------- */
+/* Safe storage: falls back to in-memory if localStorage is blocked (e.g. sandboxed preview). */
+const storage = (()=>{
+  const mem = {};
+  let LS = null;
+  // Accessing window.localStorage can itself throw in some sandboxed frames.
+  try { LS = window.localStorage; const t="__nf_probe__"; LS.setItem(t,"1"); LS.removeItem(t); }
+  catch(e){ LS = null; }
+  return {
+    getItem:k=>{ try{ return LS ? LS.getItem(k) : (k in mem ? mem[k] : null); }catch(e){ return k in mem ? mem[k] : null; } },
+    setItem:(k,v)=>{ try{ if(LS) LS.setItem(k,String(v)); else mem[k]=String(v); }catch(e){ mem[k]=String(v); } },
+    removeItem:k=>{ try{ if(LS) LS.removeItem(k); else delete mem[k]; }catch(e){ delete mem[k]; } }
+  };
+})();
+
+const CART_KEY = "northfield_preview_cart";
+let cart = JSON.parse(storage.getItem(CART_KEY) || "[]");
+function saveCart(){ storage.setItem(CART_KEY, JSON.stringify(cart)); renderCart(); }
+function getProductPrice(product,size){
+  const key=String(size||"");
+  const vp=product?.variantPrices||{};
+  const custom=vp[key];
+  if(custom!==undefined && custom!==null && custom!=="" && Number.isFinite(Number(custom))) return Number(custom);
+  return product.discountPrice!=null ? Number(product.discountPrice) : Number(product.price||0);
+}
+function getCartProduct(item){
+  return products.find(p=>p.id===item.id);
+}
+function addToCart(product, opts){
+  const requestedQty = Math.max(1, Math.floor(Number(opts.qty)||1));
+  const availableStock = Math.max(0, Math.floor(Number(product.stock)||0));
+  const key = product.id + "|" + (opts.size||"") + "|" + (opts.color||"");
+  const existing = cart.find(i=>i.key===key);
+  const newQty = (existing ? existing.qty : 0) + requestedQty;
+  if(availableStock <= 0){
+    showToast(`${product.name} is out of stock.`);
+    return false;
+  }
+  if(newQty > availableStock){
+    showToast(`Only ${availableStock} item(s) available. You cannot add ${newQty}.`);
+    return false;
+  }
+  if(existing){ existing.qty = newQty; existing.price = getProductPrice(product,opts.size); }
+  else { cart.push({ key, id:product.id, name:product.name, image:product.images[0], price:getProductPrice(product,opts.size), size:opts.size, color:opts.color, qty:requestedQty }); }
+  saveCart();
+  showToast(`Added ${product.name} to cart`);
+  openCart();
+  return true;
+}
+function removeFromCart(key){ cart = cart.filter(i=>i.key!==key); saveCart(); }
+function changeQty(key, delta){
+  const item = cart.find(i=>i.key===key);
+  if(!item) return;
+  const product = getCartProduct(item);
+  const maxStock = product ? Math.max(0, Math.floor(Number(product.stock)||0)) : Infinity;
+  const nextQty = item.qty + delta;
+  if(nextQty <= 0){ removeFromCart(key); return; }
+  if(nextQty > maxStock){
+    showToast(`Only ${maxStock} item(s) available for ${item.name}.`);
+    return;
+  }
+  item.qty = nextQty;
+  saveCart();
+}
+async function validateCartStock(showMessage=true){
+  if(cart.length===0) return true;
+  const ids = [...new Set(cart.map(i=>products.find(p=>p.id===i.id)?.dbId).filter(Boolean))];
+  if(ids.length){
+    const {data,error}=await supabaseClient.from("products").select("id,stock,is_active,name").in("id",ids);
+    if(error){ console.error("Stock check failed",error); showToast("Could not verify stock. Please try again."); return false; }
+    const byId = Object.fromEntries((data||[]).map(p=>[p.id,p]));
+    for(const item of cart){
+      const dbId = products.find(p=>p.id===item.id)?.dbId;
+      const fresh = dbId ? byId[dbId] : null;
+      const stock = fresh ? Math.max(0,Number(fresh.stock)||0) : Math.max(0,Number(getCartProduct(item)?.stock)||0);
+      if(!fresh || fresh.is_active===false || item.qty > stock){
+        if(showMessage){
+          const msg = fresh && stock > 0
+            ? `Only ${stock} item(s) available for ${item.name}. Please reduce the quantity.`
+            : `${item.name} is out of stock.`;
+          showToast(msg);
+        }
+        if(fresh) { const local=products.find(p=>p.dbId===fresh.id); if(local) local.stock=stock; }
+        return false;
+      }
+    }
+  }
+  return true;
+}
+function cartCount(){ return cart.reduce((s,i)=>s+i.qty,0); }
+function cartSubtotal(){ return cart.reduce((s,i)=>s+i.qty*i.price,0); }
+
+function renderCart(){
+  const countEl = document.getElementById("cart-count");
+  const n = cartCount();
+  countEl.textContent = n;
+  countEl.style.display = n>0 ? "flex" : "none";
+
+  const itemsEl = document.getElementById("cart-items");
+  const footEl = document.getElementById("cart-foot");
+  const pageLayoutEl = document.getElementById("cart-page-layout");
+  const pageEmptyEl = document.getElementById("cart-page-empty");
+  const pageItemsEl = document.getElementById("cart-page-items");
+  const pageFootEl = document.getElementById("cart-page-foot");
+
+  if(cart.length===0){
+    itemsEl.innerHTML = `<div class="cart-empty">Your cart is empty.</div>`;
+    footEl.innerHTML = "";
+    if(pageLayoutEl) pageLayoutEl.style.display = "none";
+    if(pageEmptyEl) pageEmptyEl.style.display = "block";
+    return;
+  }
+  if(pageLayoutEl) pageLayoutEl.style.display = "flex";
+  if(pageEmptyEl) pageEmptyEl.style.display = "none";
+
+  const itemsHTML = cart.map(i=>`
+    <div class="cart-item">
+      <img src="${i.image}" alt="${i.name}" decoding="async">
+      <div class="cart-item-info">
+        <div class="cart-item-name">${i.name}</div>
+        <div class="cart-item-meta">${[i.size,i.color].filter(Boolean).join(" / ")}</div>
+        <div class="cart-item-bottom">
+          <div class="qty-control">
+            <button onclick="changeQty('${i.key}',-1)">−</button>
+            <span>${i.qty}</span>
+            <button onclick="changeQty('${i.key}',1)">+</button>
+          </div>
+          <span style="font-size:13px;">$${(i.price*i.qty).toFixed(2)}</span>
+        </div>
+        <button class="remove-link" style="align-self:flex-start; margin-top:6px;" onclick="removeFromCart('${i.key}')">Remove</button>
+      </div>
+    </div>
+  `).join("");
+  itemsEl.innerHTML = itemsHTML;
+  if(pageItemsEl) pageItemsEl.innerHTML = itemsHTML;
+
+  const sub = cartSubtotal();
+  const FREE = 50;
+  const remaining = Math.max(0, FREE - sub);
+  const pct = Math.min(100, sub/FREE*100);
+  const freeMsg = remaining <= 0
+    ? `<span style="color:var(--forest); font-weight:600;">Free delivery unlocked ✓</span>`
+    : `<span>Add <strong>$${remaining.toFixed(2)}</strong> more for free delivery</span>`;
+  const shipBar = `
+    <div class="ship-progress">
+      <div class="ship-progress-msg">${freeMsg}</div>
+      <div class="ship-progress-track"><div class="ship-progress-fill" style="width:${pct}%"></div></div>
+    </div>`;
+
+  footEl.innerHTML = shipBar + `
+    <div class="cart-subtotal"><span>Subtotal</span><span>$${sub.toFixed(2)}</span></div>
+    <button class="btn-primary" style="width:100%;" onclick="goToCheckoutFromDrawer()">Checkout</button>
+  `;
+  if(pageFootEl) pageFootEl.innerHTML = shipBar + `
+    <div class="cart-subtotal"><span>Subtotal</span><span>$${sub.toFixed(2)}</span></div>
+    <button class="btn-primary" style="width:100%;" onclick="goToCheckout()">Proceed to checkout</button>
+  `;
+}
+function goToCheckout(){
+  if(cart.length===0){ showToast("Your cart is empty"); return; }
+  if(!getCurrentUser()){ showToast("Please sign in to checkout"); navigate("/login"); return; }
+  navigate("/checkout");
+}
+function goToCheckoutFromDrawer(){ closeCart(); goToCheckout(); }
+function openCart(){ document.getElementById("cart-drawer").classList.add("open"); document.getElementById("overlay").classList.add("open"); }
+function closeCart(){ document.getElementById("cart-drawer").classList.remove("open"); document.getElementById("overlay").classList.remove("open"); }
+document.getElementById("cart-toggle").addEventListener("click", openCart);
+document.getElementById("cart-close").addEventListener("click", closeCart);
+document.getElementById("overlay").addEventListener("click", closeCart);
+
+/* ---------- Mobile nav drawer ---------- */
+const mobileNav = document.getElementById("mobile-nav");
+const mobileNavOverlay = document.getElementById("mobile-nav-overlay");
+function openMobileNav(){ mobileNav.classList.add("open"); mobileNavOverlay.classList.add("open"); }
+function closeMobileNav(){ mobileNav.classList.remove("open"); mobileNavOverlay.classList.remove("open"); }
+document.getElementById("hamburger-toggle").addEventListener("click", openMobileNav);
+document.getElementById("mobile-nav-close").addEventListener("click", closeMobileNav);
+mobileNavOverlay.addEventListener("click", closeMobileNav);
+document.querySelectorAll("#mobile-nav a[data-link]").forEach(a=>a.addEventListener("click", closeMobileNav));
+
+/* ---------- Header search ---------- */
+const searchBarRow = document.getElementById("search-bar-row");
+const headerSearchInput = document.getElementById("header-search-input");
+document.getElementById("search-toggle").addEventListener("click", ()=>{
+  searchBarRow.classList.toggle("open");
+  if(searchBarRow.classList.contains("open")) headerSearchInput.focus();
+});
+headerSearchInput.addEventListener("keydown", (e)=>{
+  if(e.key === "Enter"){
+    e.preventDefault();
+    const q = headerSearchInput.value.trim();
+    navigate("/shop" + (q ? ("?q=" + encodeURIComponent(q)) : ""));
+    searchBarRow.classList.remove("open");
+    headerSearchInput.value = "";
+  }
+});
+
+/* ---------- Mobile filters toggle (shop page) ---------- */
+const filtersToggleBtn = document.getElementById("filters-toggle");
+filtersToggleBtn.addEventListener("click", ()=>{
+  document.getElementById("shop-filters-panel").classList.toggle("mobile-open");
+});
+
+/* ---------- Supabase backend ---------- */
+const SUPABASE_URL = "https://quyfwhzfscacllnlnvla.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_wKrQWiF8_f8gB1vTOZIJAA_Hj_CqYKk";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+const AUTH_KEY = "northfield_supabase_user";
+
+let dbProducts = [];
+
+async function loadSupabaseData(){
+  try{
+    const {data, error} = await supabaseClient.from("products").select("*, categories(name,slug)").eq("is_active",true).order("created_at",{ascending:true});
+    if(error) throw error;
+    if(Array.isArray(data) && data.length){
+      dbProducts = data;
+      products = data.map(p=>{
+        const localCat = categories.find(c=>c.name === p.categories?.name || c.slug === p.categories?.slug);
+        return {
+          id:p.legacy_id || p.id, dbId:p.id, name:p.name, slug:p.slug, description:p.description||"",
+          price:Number(p.price||0), discountPrice:p.discount_price==null?null:Number(p.discount_price),
+          stock:Number(p.stock||0), category:localCat?.id || p.categories?.slug || "", rating:Number(p.rating||0),
+          reviewCount:Number(p.review_count||0), bestseller:!!p.bestseller, isNew:!!p.is_new,
+          images:Array.isArray(p.images)?p.images:[], sizes:Array.isArray(p.sizes)?p.sizes:[], variantPrices:(p.variant_prices&&typeof p.variant_prices==="object")?p.variant_prices:{}
+        };
+      });
+    }
+  }catch(err){
+    console.warn("Supabase product load failed; using built-in catalog.",err);
+  }
+  try{
+    const {data:{session}} = await supabaseClient.auth.getSession();
+    if(session?.user){ await cacheSupabaseUser(session.user); }
+  }catch(err){ console.warn("Supabase session load failed",err); }
+}
+
+async function cacheSupabaseUser(authUser){
+  if(!authUser) return null;
+  const fallbackName=authUser.user_metadata?.full_name || authUser.email?.split("@")[0] || "Customer";
+  let {data:profile} = await supabaseClient.from("profiles").select("full_name,phone,role,email").eq("id",authUser.id).maybeSingle();
+  if(!profile){
+    const {data:createdProfile,error:profileError}=await supabaseClient.from("profiles").insert({id:authUser.id,full_name:fallbackName,email:authUser.email||"",role:"customer"}).select("full_name,phone,role,email").single();
+    if(!profileError) profile=createdProfile;
+  }
+  const user = {id:authUser.id,name:profile?.full_name || fallbackName,email:authUser.email || profile?.email || "",phone:profile?.phone || "",role:profile?.role || "customer"};
+  storage.setItem(AUTH_KEY,JSON.stringify(user));
+  updateAuthUI();
+  return user;
+}
+
+function getCurrentUser(){ return JSON.parse(storage.getItem(AUTH_KEY) || "null"); }
+function setCurrentUser(user){ storage.setItem(AUTH_KEY, JSON.stringify(user)); updateAuthUI(); }
+async function logout(){
+  await supabaseClient.auth.signOut();
+  storage.removeItem(AUTH_KEY);
+  wishlist = new Set();
+  storage.removeItem("northfield_preview_wishlist");
+  updateAuthUI(); showToast("Logged out"); navigate("/");
+}
+function updateAuthUI(){
+  const user = getCurrentUser();
+  const mobileLink = document.getElementById("mobile-account-link");
+  const accountLink = document.getElementById("account-link");
+  const adminLink = document.getElementById("admin-panel-link");
+  if(adminLink) adminLink.style.display = user?.role === "admin" ? "flex" : "none";
+  if(user){
+    mobileLink.textContent = "My Account"; mobileLink.setAttribute("href", "#/account");
+    accountLink.setAttribute("href", "#/account"); accountLink.title = "My Account (" + user.name + ")";
+  } else {
+    mobileLink.textContent = "Sign in"; mobileLink.setAttribute("href", "#/login");
+    accountLink.setAttribute("href", "#/login"); accountLink.title = "Sign in";
+  }
+}
+
+async function getMyOrders(){
+  const user=getCurrentUser(); if(!user) return [];
+  const {data,error}=await supabaseClient.from("orders").select("*, order_items(*)").eq("user_id",user.id).order("created_at",{ascending:false});
+  if(error){ console.warn("Orders load failed",error); return []; }
+  return (data||[]).map(o=>({...o,orderNumber:o.order_number,deliveryCharge:Number(o.delivery_charge||0),postalCode:o.postal_code,fullName:o.full_name,email:o.email,phone:o.phone,address:o.address,city:o.city,createdAt:o.created_at,items:(o.order_items||[]).map(i=>({...i,qty:Number(i.qty),price:Number(i.price)}))}));
+}
+function generateOrderNumber(){ return "ZP-" + Date.now().toString(36).toUpperCase() + "-" + Math.random().toString(36).slice(2,5).toUpperCase(); }
+function requireAuth(message){ if(!getCurrentUser()){ if(message) showToast(message); navigate("/login"); return false; } return true; }
+
+function renderAccountPage(){
+  const user = getCurrentUser();
+  if(!user) return;
+  const firstName = user.name.trim().split(" ")[0];
+  document.getElementById("account-greeting").textContent = "Hi, " + firstName;
+  document.getElementById("account-avatar").textContent = user.name.trim().charAt(0).toUpperCase() || "N";
+  document.getElementById("account-name-display").value = user.name;
+  document.getElementById("account-email-display").value = user.email;
+  document.getElementById("account-email-sub").textContent = user.email;
+  // Live stat counts
+  document.getElementById("stat-orders").textContent = "…";
+  getMyOrders().then(os=>document.getElementById("stat-orders").textContent=os.length);
+  document.getElementById("stat-wishlist").textContent = wishlist.size;
+  document.getElementById("stat-cart").textContent = cartCount();
+}
+
+async function renderOrdersPage(){
+  const orders = await getMyOrders();
+  const listEl = document.getElementById("orders-list");
+  if(orders.length===0){
+    listEl.innerHTML = `\
+      <div class="order-empty">
+        <div class="order-empty-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v4H4z"/><path d="M6 8v12h12V8"/><path d="M10 12h4"/></svg>
+        </div>
+        <h3 class="font-display">No orders yet</h3>
+        <p>When you place an order, it'll appear here so you can review and track it.</p>
+        <a href="#/shop" data-link class="btn-primary">Shop patterns</a>
+      </div>`;
+    return;
+  }
+  const statusClass = s => (s||"").toLowerCase().replace(/[^a-z]+/g,"-");
+  const money = n => "$" + Number(n||0).toFixed(2);
+  listEl.innerHTML = orders.map(o=>{
+    const count = o.items.reduce((s,i)=>s+i.qty,0);
+    const date = new Date(o.createdAt).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"});
+    const items = (o.items||[]).map(i=>{
+      const fallbackProduct = products.find(p=>p.dbId===i.product_id || p.id===i.product_id);
+      const imageUrl = i.image || fallbackProduct?.images?.[0] || "https://images.unsplash.com/photo-1515459961680-58264ee27219?auto=format&fit=crop&w=800&q=80";
+      return `
+      <li class="order-item">
+        <img src="${imageUrl}" alt="${i.name}" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1515459961680-58264ee27219?auto=format&fit=crop&w=800&q=80';" decoding="async">
+        <div class="order-item-info">
+          <div class="order-item-name">${i.name}</div>
+          <div class="order-item-meta">${[i.size,i.color].filter(Boolean).join(" / ") || "Printed pattern"}</div>
+          <div class="order-item-line"><span>${i.qty} × ${money(i.price)}</span><strong>${money(i.price*i.qty)}</strong></div>
+        </div>
+      </li>`;}).join("");
+    const addr = [o.address, o.city, o.postalCode].filter(Boolean).join(", ");
+    return `\
+      <article class="order-card">
+        <div class="order-head">
+          <div>
+            <div class="order-num">${o.orderNumber}</div>
+            <div class="order-date">Placed ${date} · ${count} item${count===1?"":"s"}</div>
+          </div>
+          <span class="order-status ${statusClass(o.status)}">${o.status}</span>
+        </div>
+        <div class="order-body">
+          <ul class="order-items">${items}</ul>
+          <div class="order-summary">
+            <div class="order-total-row"><span>Subtotal</span><span>${money(o.subtotal)}</span></div>
+            <div class="order-total-row"><span>Delivery</span><span>${o.deliveryCharge ? money(o.deliveryCharge) : "Free"}</span></div>
+            <div class="order-total-row grand"><span>Total</span><span>${money(o.total)}</span></div>
+          </div>
+          <div class="order-address">
+            <strong>Delivering to ${o.fullName||"you"}</strong>${addr ? " — "+addr : ""}
+          </div>
+        </div>
+      </article>`;
+  }).join("");
+}
+
+async function getAdminOrders(){
+  const user=getCurrentUser();
+  if(!user || user.role!=="admin") return [];
+  const {data,error}=await supabaseClient.from("orders").select("*, order_items(*)").order("created_at",{ascending:false});
+  if(error){ console.error("Admin orders load failed",error); showToast("Could not load orders"); return []; }
+  return (data||[]).map(o=>({...o,orderNumber:o.order_number,fullName:o.full_name,postalCode:o.postal_code,deliveryCharge:Number(o.delivery_charge||0),createdAt:o.created_at,items:(o.order_items||[]).map(i=>({...i,qty:Number(i.qty),price:Number(i.price)}))}));
+}
+
+function adminMoney(n){ return "$"+Number(n||0).toFixed(2); }
+function adminEsc(v){ return String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;","\"":"&quot;"}[c])); }
+
+function formatBytes(bytes){
+  const n=Number(bytes||0);
+  if(n<1024) return `${n} B`;
+  if(n<1024*1024) return `${(n/1024).toFixed(1)} KB`;
+  if(n<1024*1024*1024) return `${(n/1024/1024).toFixed(2)} MB`;
+  return `${(n/1024/1024/1024).toFixed(2)} GB`;
+}
+
+async function getAdminDashboardStats(){
+  const user=getCurrentUser();
+  if(!user || user.role!=="admin") return null;
+  const {data,error}=await supabaseClient.rpc("admin_dashboard_stats");
+  if(error){ console.error("Admin dashboard stats failed",error); return null; }
+  return data||null;
+}
+
+
+function adminNavigate(section){
+  const view=document.getElementById('admin-view-'+section); if(!view) return;
+  document.querySelectorAll('.admin-view').forEach(v=>v.classList.remove('active'));
+  view.classList.add('active');
+  document.querySelectorAll('.admin-nav-item[data-admin-section]').forEach(b=>b.classList.toggle('active',b.dataset.adminSection===section));
+  document.getElementById('admin-sidebar')?.classList.remove('open');
+  if(section==='dashboard') renderAdminDashboard();
+  if(section==='orders') renderAdminOrdersView();
+  if(section==='products') renderAdminProducts();
+  if(section==='customers') renderAdminCustomers();
+  if(section==='storage') renderAdminStorageView();
+  if(section==='analytics') renderAdminAnalytics();
+}
+function adminMoney2(v){ return 'Rs. '+Number(v||0).toLocaleString(undefined,{maximumFractionDigits:2}); }
+function adminStatusClass(s){ return String(s||'').toLowerCase().replace(/[^a-z]+/g,'-'); }
+function adminImage(url){ return adminEsc(url||'https://images.unsplash.com/photo-1515459961680-58264ee27219?auto=format&fit=crop&w=120&q=80'); }
+async function renderAdminDashboard(){
+  const user=getCurrentUser(); if(!user||user.role!=='admin') return;
+  const [orders,products,usage]=await Promise.all([getAdminOrders(),getAdminProducts(),getAdminDashboardStats()]);
+  const counts={total:orders.length,pending:0,processing:0,shipped:0,delivered:0,cancelled:0};
+  orders.forEach(o=>{if(counts[o.status.toLowerCase()]!==undefined) counts[o.status.toLowerCase()]++;});
+  const revenue=orders.filter(o=>o.status!=='Cancelled').reduce((a,o)=>a+Number(o.total||0),0);
+  const activeProducts=products.filter(p=>p.is_active).length;
+  const low=products.filter(p=>Number(p.stock||0)<=5).sort((a,b)=>Number(a.stock||0)-Number(b.stock||0));
+  const sold={}; orders.forEach(o=>(o.items||[]).forEach(i=>{sold[i.productId||i.name]=(sold[i.productId||i.name]||0)+Number(i.qty||0);}));
+  const best=Object.entries(sold).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([key,qty])=>{const p=products.find(x=>x.id===key||x.dbId===key||x.name===key); return {name:p?.name||key,qty,image:p?.images?.[0]||''};});
+  const kpis=[['▣',counts.total,'Total Orders',`${counts.total} orders`],['◷',counts.pending,'Pending',`${counts.pending} awaiting action`],['⚙',counts.processing,'Processing',`${counts.processing} in progress`],['▤',counts.shipped,'Shipped',`${counts.shipped} shipped`],['♙',Number(usage?.customers||0),'Customers',`${Number(usage?.admins||0)} admin`],['◇',products.length,'Products',`${activeProducts} active`]];
+  document.getElementById('admin-kpi-grid').innerHTML=kpis.map(k=>`<div class="admin-kpi"><div class="kpi-icon">${k[0]}</div><strong>${Number(k[1]).toLocaleString()}</strong><span>${k[2]}</span><em>${adminEsc(k[3])}</em></div>`).join('');
+  document.getElementById('admin-nav-order-count').textContent=counts.total;
+  document.getElementById('admin-revenue-total').textContent=adminMoney2(revenue);
+  const max=Math.max(1,...orders.slice(0,7).map(o=>Number(o.total||0)));
+  document.getElementById('admin-sales-chart').innerHTML=(orders.slice().sort((a,b)=>new Date(a.createdAt)-new Date(b.createdAt)).slice(-7).map((o,i)=>{const h=Math.max(8,Number(o.total||0)/max*100); return `<div class="sales-bar" style="height:${h}%"><small>${new Date(o.createdAt).toLocaleDateString(undefined,{month:'short',day:'numeric'})}</small></div>`}).join('')||'<div style="width:100%;text-align:center;color:#89948e;font-size:10px;align-self:center;">No sales data yet</div>');
+  const pct=counts.total?Math.round((counts.processing+counts.shipped+counts.delivered)/counts.total*100):0;
+  document.getElementById('admin-status-dashboard').innerHTML=`<div class="status-ring" style="--pct:${pct}%"><div class="status-ring-inner"><strong>${counts.total}</strong><span>Orders</span></div></div><div class="status-legend">${[['Pending','#d99b2b',counts.pending],['Processing','#43886b',counts.processing],['Shipped','#5a8ca5',counts.shipped],['Delivered','#62a070',counts.delivered],['Cancelled','#d65d56',counts.cancelled]].map(x=>`<div><i class="status-dot" style="background:${x[1]}"></i>${x[0]} <b>${x[2]}</b></div>`).join('')}</div>`;
+  document.getElementById('admin-low-stock').innerHTML=low.length?`<table class="admin-mini-table"><thead><tr><th>Product</th><th>Stock</th><th>Status</th></tr></thead><tbody>${low.slice(0,5).map(p=>`<tr><td><div class="product-mini"><img src="${adminImage(p.images?.[0])}" decoding="async"><strong>${adminEsc(p.name)}</strong></div></td><td class="low-stock-num"><strong>${Number(p.stock||0)}</strong></td><td><span class="stock-badge">Low</span></td></tr>`).join('')}</tbody></table>`:'<div class="admin-empty" style="padding:30px 10px;border:0;background:transparent;">All products have healthy stock.</div>';
+  document.getElementById('admin-best-selling').innerHTML=best.length?`<table class="admin-mini-table"><thead><tr><th>Product</th><th>Sold</th></tr></thead><tbody>${best.map(x=>`<tr><td><div class="product-mini"><img src="${adminImage(x.image)}" decoding="async"><strong>${adminEsc(x.name)}</strong></div></td><td><strong>${x.qty}</strong></td></tr>`).join('')}</tbody></table>`:'<div class="admin-empty" style="padding:30px 10px;border:0;background:transparent;">Sales will appear here after orders.</div>';
+  renderAdminDashboardUsage(usage); renderAdminRecentOrders(orders); renderAdminSummary(orders,products,usage); renderAdminAnalyticsFromData(orders,products);
+}
+function renderAdminDashboardUsage(stats){const el=document.getElementById('admin-dashboard-usage'); if(!el)return;if(!stats){el.innerHTML='<div class="admin-empty" style="padding:25px">Usage unavailable.</div>';return;} const db=Number(stats.database_bytes||0),st=Number(stats.storage_bytes||0),dbPct=Math.min(100,db/(500*1024*1024)*100),stPct=Math.min(100,st/(1024*1024*1024)*100); el.innerHTML=`<div class="usage-mini-grid"><div class="usage-mini"><label>Database</label><strong>${formatBytes(db)}</strong><div class="mini-bar"><i style="width:${dbPct}%"></i></div><div style="font-size:8px;color:#839088;margin-top:5px">${dbPct.toFixed(1)}% of 500 MB</div></div><div class="usage-mini"><label>Product Storage</label><strong>${formatBytes(st)}</strong><div class="mini-bar"><i style="width:${stPct}%"></i></div><div style="font-size:8px;color:#839088;margin-top:5px">${stPct.toFixed(1)}% of 1 GB</div></div></div><div class="summary-row"><span>Storage files</span><strong>${Number(stats.storage_files||0)}</strong></div><div class="summary-row"><span>Accounts</span><strong>${Number(stats.customers||0)}</strong></div>`; const ss=document.getElementById('admin-side-storage');if(ss)ss.textContent=formatBytes(st);const ds=document.getElementById('admin-side-db');if(ds)ds.textContent=formatBytes(db);const sb=document.getElementById('admin-side-storage-bar');if(sb)sb.style.width=stPct+'%';const dbb=document.getElementById('admin-side-db-bar');if(dbb)dbb.style.width=dbPct+'%';}
+function renderAdminRecentOrders(orders){const el=document.getElementById('admin-recent-orders');if(!el)return;const rows=orders.slice().sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt)).slice(0,6);el.innerHTML=rows.length?`<table class="admin-mini-table"><thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th></tr></thead><tbody>${rows.map(o=>`<tr><td><strong>${adminEsc(o.orderNumber)}</strong></td><td>${adminEsc(o.fullName||o.email||'Customer')}</td><td>${adminMoney2(o.total)}</td><td><span class="recent-status ${adminStatusClass(o.status)}">${adminEsc(o.status)}</span></td></tr>`).join('')}</tbody></table>`:'<div class="admin-empty" style="padding:30px 10px;border:0;background:transparent;">No orders yet.</div>';}
+function renderAdminSummary(orders,products,usage){const el=document.getElementById('admin-store-summary');if(!el)return;const revenue=orders.filter(o=>o.status!=='Cancelled').reduce((a,o)=>a+Number(o.total||0),0);el.innerHTML=[['Gross order value',adminMoney2(revenue)],['Active products',products.filter(p=>p.is_active).length],['Low stock items',products.filter(p=>Number(p.stock||0)<=5).length],['Customers',Number(usage?.customers||0)],['Storage files',Number(usage?.storage_files||0)]].map(x=>`<div class="summary-row"><span>${x[0]}</span><strong>${x[1]}</strong></div>`).join('');}
+async function getAdminOrderHistory(orderIds){
+  const user=getCurrentUser();
+  if(!user || user.role!=="admin" || !orderIds.length) return {};
+  const {data,error}=await supabaseClient.from("order_status_history").select("order_id,old_status,new_status,created_at").in("order_id",orderIds).order("created_at",{ascending:true});
+  if(error){ console.error("Order history load failed",error); return {}; }
+  return (data||[]).reduce((acc,row)=>{(acc[row.order_id] ||= []).push(row); return acc;},{});
+}
+
+async function renderAdminOrdersView(){
+  const list=document.getElementById('admin-orders-list');
+  if(!list)return;
+  list.innerHTML='<div class="admin-empty">Loading orders…</div>';
+  const orders=await getAdminOrders();
+  const filter=document.getElementById('admin-status-filter')?.value||'all';
+  const filtered=filter==='all'?orders:orders.filter(o=>o.status===filter);
+  const history=await getAdminOrderHistory(filtered.map(o=>o.id));
+  list.innerHTML=filtered.length?filtered.map(o=>{
+    const items=(o.items||[]).map(i=>`<div class="admin-item-row"><span>${adminEsc(i.name)} × ${i.qty}${i.size?' · '+adminEsc(i.size):''}</span><strong>${adminMoney(i.price*i.qty)}</strong></div>`).join('');
+    const date=new Date(o.createdAt).toLocaleString(undefined,{year:'numeric',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+    const addr=[o.address,o.city,o.postalCode].filter(Boolean).map(adminEsc).join(', ');
+    const hist=(history[o.id]||[]).map(h=>`<div class="status-history-row"><span>${new Date(h.created_at).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}</span><strong>${adminEsc(h.old_status||'New')} → ${adminEsc(h.new_status)}</strong></div>`).join('');
+    return `<article class="admin-order-card"><div class="admin-order-head"><div><div class="order-num">${adminEsc(o.orderNumber||'Order')}</div><div class="admin-order-meta">${date} · ${(o.items||[]).reduce((a,i)=>a+i.qty,0)} item(s)</div></div><select class="admin-status-select" data-order-status="${o.id}" aria-label="Order status">${['Pending','Processing','Shipped','Delivered','Cancelled'].map(st=>`<option value="${st}" ${o.status===st?'selected':''}>${st}</option>`).join('')}</select></div><div class="admin-order-body"><div class="admin-order-grid"><div class="admin-customer-box"><div class="admin-box-title">Customer & delivery</div><p><strong>${adminEsc(o.fullName||'Customer')}</strong><br>${adminEsc(o.email||'')}<br>${adminEsc(o.phone||'')}<br>${addr||'No address'}</p></div><div class="admin-items-box"><div class="admin-box-title">Order items</div>${items}<div class="admin-item-row" style="border-top:1px solid var(--line);margin-top:8px;padding-top:10px;"><strong>Total</strong><strong>${adminMoney(o.total)}</strong></div></div></div>${hist?`<details class="status-history"><summary>View status history</summary><div class="status-history-list">${hist}</div></details>`:''}</div></article>`;
+  }).join(''):'<div class="admin-empty">No orders found.</div>';
+}
+async function renderAdminCustomers(){
+  const el=document.getElementById('admin-customers-list');
+  if(!el)return;
+  el.innerHTML='<div class="admin-empty">Loading customers…</div>';
+  const [profilesRes,orders]=await Promise.all([
+    supabaseClient.from('profiles').select('id,full_name,email,phone,role,created_at').order('created_at',{ascending:false}),
+    getAdminOrders()
+  ]);
+  if(profilesRes.error){ console.error('Customer profile load failed',profilesRes.error); el.innerHTML='<div class="admin-empty">Could not load customer accounts.</div>'; return; }
+  const stats={};
+  orders.forEach(o=>{const key=o.userId||o.email; if(!key)return; const x=stats[key] ||= {orders:0,spent:0,last:o.createdAt}; x.orders++; if(o.status!=='Cancelled')x.spent+=Number(o.total||0); if(new Date(o.createdAt)>new Date(x.last))x.last=o.createdAt;});
+  const rows=(profilesRes.data||[]).filter(p=>p.role!=='admin').map(p=>({
+    ...p, orders:stats[p.id]?.orders||0, spent:stats[p.id]?.spent||0, last:stats[p.id]?.last||null
+  })).sort((a,b)=>b.spent-a.spent);
+  el.innerHTML=rows.length?`<table class="customer-table"><thead><tr><th>Customer</th><th>Phone</th><th>Orders</th><th>Total spent</th><th>Last order</th><th>Joined</th></tr></thead><tbody>${rows.map(c=>`<tr><td><div class="customer-name">${adminEsc(c.full_name||'Customer')}</div><div class="customer-email">${adminEsc(c.email||'')}</div></td><td>${adminEsc(c.phone||'—')}</td><td>${c.orders}</td><td><strong>${adminMoney2(c.spent)}</strong></td><td>${c.last?new Date(c.last).toLocaleDateString():'—'}</td><td>${c.created_at?new Date(c.created_at).toLocaleDateString():'—'}</td></tr>`).join('')}</tbody></table>`:'<div class="admin-empty">No customer accounts yet.</div>';
+}
+async function renderAdminStorageView(){const stats=await getAdminDashboardStats();renderAdminUsage(stats);const el=document.getElementById('admin-storage-cleanup');if(!el)return;const products=await getAdminProducts();const used=[];products.forEach(p=>(Array.isArray(p.images)?p.images:[]).forEach(url=>{const m=String(url).match(/\/storage\/v1\/object\/public\/product-images\/(.+)$/);if(m)used.push(decodeURIComponent(m[1]));}));el.innerHTML=`<div class="admin-storage-item"><span><strong>Referenced product images</strong></span><span class="admin-storage-tag">${used.length} in catalog</span></div><div class="admin-storage-item"><span><strong>Automatic replacement cleanup</strong></span><span class="admin-storage-tag">Enabled</span></div><p style="font-size:10px;color:#849089;line-height:1.6;margin-top:12px">When you replace product images from Product Management, old Supabase Storage files that are no longer referenced are removed automatically.</p>`;}
+function renderAdminAnalyticsFromData(orders,products){const el=document.getElementById('admin-analytics-status');if(el){const vals=['Pending','Processing','Shipped','Delivered','Cancelled'].map(s=>({s,v:orders.filter(o=>o.status===s).reduce((a,o)=>a+Number(o.total||0),0)}));const max=Math.max(1,...vals.map(x=>x.v));el.innerHTML=vals.map(x=>`<div class="analytics-row"><span class="analytics-label">${x.s}</span><div class="analytics-track"><i style="width:${x.v/max*100}%"></i></div><span class="analytics-value">${adminMoney2(x.v)}</span></div>`).join('');}const cat=document.getElementById('admin-analytics-catalog');if(cat){const active=products.filter(p=>p.is_active).length,hidden=products.length-active,low=products.filter(p=>Number(p.stock||0)<=5).length;cat.innerHTML=[['Active products',active,products.length],['Hidden products',hidden,products.length],['Low stock',low,products.length]].map(x=>`<div class="analytics-row"><span class="analytics-label">${x[0]}</span><div class="analytics-track"><i style="width:${x[2]?x[1]/x[2]*100:0}%"></i></div><span class="analytics-value">${x[1]} / ${x[2]}</span></div>`).join('');}}
+async function renderAdminAnalytics(){const [o,p]=await Promise.all([getAdminOrders(),getAdminProducts()]);renderAdminAnalyticsFromData(o,p);}
+let adminWired=false;
+function wireProfessionalAdmin(){
+  if(adminWired) return;
+  adminWired=true;
+  document.querySelectorAll('[data-admin-section]').forEach(b=>b.addEventListener('click',()=>adminNavigate(b.dataset.adminSection)));
+  document.querySelectorAll('[data-admin-action="view-store"]').forEach(b=>b.addEventListener('click',()=>{location.hash='#home';}));
+  document.querySelectorAll('[data-admin-action="logout"]').forEach(b=>b.addEventListener('click',()=>{if(typeof logout==='function')logout();}));
+  const adminMenu=document.getElementById('admin-mobile-menu');
+   const adminSide=document.getElementById('admin-sidebar');
+   const adminBackdrop=document.getElementById('admin-mobile-backdrop');
+   const toggleAdminMenu=(force)=>{if(!adminSide)return;const open=typeof force==='boolean'?force:!adminSide.classList.contains('open');adminSide.classList.toggle('open',open);adminBackdrop?.classList.toggle('open',open);adminBackdrop?.setAttribute('aria-hidden',String(!open));document.body.classList.toggle('admin-menu-open',open);};
+   adminMenu?.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleAdminMenu();});
+   adminBackdrop?.addEventListener('click',()=>toggleAdminMenu(false));
+   document.querySelectorAll('#admin-sidebar .admin-nav-item').forEach(b=>b.addEventListener('click',()=>{if(window.innerWidth<=850)toggleAdminMenu(false);}));
+   window.addEventListener('resize',()=>{if(window.innerWidth>850)toggleAdminMenu(false);});
+  document.getElementById('admin-top-refresh')?.addEventListener('click',()=>renderAdminDashboard());document.getElementById('admin-dashboard-refresh')?.addEventListener('click',()=>renderAdminDashboard());document.getElementById('admin-usage-dashboard-refresh')?.addEventListener('click',()=>getAdminDashboardStats().then(renderAdminDashboardUsage));document.getElementById('admin-status-filter')?.addEventListener('change',renderAdminOrdersView);document.getElementById('admin-global-search')?.addEventListener('input',e=>{const q=e.target.value.trim().toLowerCase();if(q.length<2)return;adminNavigate('orders');setTimeout(()=>{document.querySelectorAll('#admin-orders-list .admin-order-card').forEach(card=>card.style.display=card.innerText.toLowerCase().includes(q)?'':'none');},30);});
+}
+
+function renderAdminUsage(stats){
+  const grid=document.getElementById("admin-usage-grid");
+  if(!grid) return;
+  if(!stats){ grid.innerHTML='<div class="usage-card"><div class="usage-label">Usage</div><div class="usage-value">Unavailable</div><div class="usage-sub">Could not load Supabase usage.</div></div>'; return; }
+  const db=Number(stats.database_bytes||0), storage=Number(stats.storage_bytes||0);
+  const dbLimit=500*1024*1024, storageLimit=1024*1024*1024;
+  const dbPct=Math.min(100,db/dbLimit*100), storagePct=Math.min(100,storage/storageLimit*100);
+  grid.innerHTML=`
+    <div class="usage-card"><div class="usage-card-top"><div><div class="usage-label">Database</div><div class="usage-value">${formatBytes(db)}</div></div><span class="usage-badge">${dbPct.toFixed(1)}% of 500 MB</span></div><div class="usage-bar"><i style="width:${dbPct}%"></i></div><div class="usage-sub">Postgres database size</div></div>
+    <div class="usage-card"><div class="usage-card-top"><div><div class="usage-label">Product Storage</div><div class="usage-value">${formatBytes(storage)}</div></div><span class="usage-badge">${storagePct.toFixed(1)}% of 1 GB</span></div><div class="usage-bar"><i style="width:${storagePct}%"></i></div><div class="usage-sub">product-images bucket · ${Number(stats.storage_files||0)} file(s)</div></div>
+    <div class="usage-card"><div class="usage-label">Storage Files</div><div class="usage-value">${Number(stats.storage_files||0).toLocaleString()}</div><div class="usage-sub">Files currently inside product-images</div></div>
+    <div class="usage-card"><div class="usage-label">Accounts</div><div class="usage-value">${Number(stats.customers||0).toLocaleString()}</div><div class="usage-sub">${Number(stats.admins||0)} admin account(s) · ${Number(stats.storage_buckets||0)} storage bucket(s)</div></div>`;
+}
+
+async function refreshAdminUsage(){
+  const btn=document.getElementById("admin-usage-refresh-btn");
+  if(btn) btn.disabled=true;
+  const stats=await getAdminDashboardStats();
+  renderAdminUsage(stats);
+  if(btn) btn.disabled=false;
+}
+
+async function renderAdminPage(){
+  const user=getCurrentUser(); if(!user || user.role!=="admin"){ return; }
+  const name=document.getElementById('admin-user-name'); if(name) name.textContent=user.name||'Admin';
+  const av=document.getElementById('admin-avatar'); if(av) av.textContent=(user.name||'A').charAt(0).toUpperCase();
+  wireProfessionalAdmin();
+  adminNavigate('dashboard');
+}
+
+async function updateOrderStatus(orderId,status){
+  const user=getCurrentUser();
+  if(!user || user.role!=="admin"){ showToast("Admin access required"); return; }
+  const {error}=await supabaseClient.from("orders").update({status}).eq("id",orderId);
+  if(error){ console.error("Order status update failed",error); showToast("Could not update order status"); return; }
+  showToast("Order status updated");
+  await renderAdminPage();
+}
+
+async function getAdminProducts(){
+  const user=getCurrentUser();
+  if(!user || user.role!=="admin") return [];
+  const {data,error}=await supabaseClient.from("products").select("*, categories(id,name,slug)").order("created_at",{ascending:false});
+  if(error){ console.error("Admin products load failed",error); showToast("Could not load products"); return []; }
+  return data||[];
+}
+
+async function loadAdminCategories(){
+  const select=document.getElementById("admin-product-category");
+  if(!select) return;
+  const {data,error}=await supabaseClient.from("categories").select("id,name,slug").order("name");
+  if(error){ console.error(error); select.innerHTML='<option value="">Could not load categories</option>'; return; }
+  select.innerHTML=(data||[]).map(c=>`<option value="${c.id}">${adminEsc(c.name)}</option>`).join("");
+}
+
+async function renderAdminProducts(){
+  const list=document.getElementById("admin-products-list");
+  if(!list) return;
+  list.innerHTML='<div class="admin-empty">Loading products…</div>';
+  const rows=await getAdminProducts();
+  if(!rows.length){ list.innerHTML='<div class="admin-empty">No products found.</div>'; return; }
+  list.innerHTML=rows.map(p=>{
+    const image=Array.isArray(p.images)&&p.images[0]?p.images[0]:"https://images.unsplash.com/photo-1515459961680-58264ee27219?auto=format&fit=crop&w=400&q=80";
+    const price=Number(p.price||0), discount=p.discount_price==null?null:Number(p.discount_price);
+    const cat=p.categories?.name||"Uncategorized";
+    return `<article class="admin-product-card"><img src="${adminEsc(image)}" alt="${adminEsc(p.name)}" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1515459961680-58264ee27219?auto=format&fit=crop&w=400&q=80';" decoding="async"><div class="admin-product-info"><h3>${adminEsc(p.name)}</h3><div class="admin-product-meta">${adminEsc(cat)} · Stock: <strong>${Number(p.stock||0)}</strong> · ${discount!=null?`<s>${adminMoney(price)}</s> ${adminMoney(discount)}`:adminMoney(price)}</div><span class="admin-badge ${p.is_active?"":"inactive"}">${p.is_active?"Active":"Hidden"}</span></div><div class="admin-product-actions"><button class="btn-secondary" type="button" data-edit-product="${p.id}">Edit</button><button class="btn-secondary" type="button" data-toggle-product="${p.id}" data-active="${p.is_active}">${p.is_active?"Hide":"Show"}</button></div></article>`;
+  }).join("");
+}
+
+function renderAdminSizePriceFields(sizes, prices){
+  const wrap=document.getElementById("admin-size-prices");
+  if(!wrap) return;
+  const arr=Array.isArray(sizes)?sizes:[]; const vp=prices||{};
+  wrap.innerHTML=arr.map(size=>`<div class="size-price-row"><strong>Size ${adminEsc(size)}</strong><input type="number" min="0" step="0.01" data-size-price="${adminEsc(size)}" value="${vp[size]??""}" placeholder="Default"></div>`).join("");
+}
+function collectAdminSizePrices(){
+  const out={}; document.querySelectorAll("[data-size-price]").forEach(i=>{const v=i.value.trim(); if(v!=="") out[i.dataset.sizePrice]=Number(v);}); return out;
+}
+function syncAdminSizePriceFields(){
+  const sizes=document.getElementById("admin-product-sizes")?.value.split(",").map(x=>x.trim()).filter(Boolean)||[];
+  renderAdminSizePriceFields(sizes,{});
+}
+
+function resetAdminProductForm(){
+  const form=document.getElementById("admin-product-form"); if(!form) return;
+  form.reset(); document.getElementById("admin-product-id").value=""; renderAdminSizePriceFields([],{}); document.getElementById("admin-product-active").checked=true; if(document.getElementById("admin-product-image-files")) document.getElementById("admin-product-image-files").value="";
+  document.getElementById("admin-product-save").textContent="Save product"; form.style.display="none";
+}
+
+function fillAdminProductForm(p){
+  const form=document.getElementById("admin-product-form"); if(!form) return;
+  form.style.display="block";
+  document.getElementById("admin-product-id").value=p.id;
+  document.getElementById("admin-product-name").value=p.name||"";
+  document.getElementById("admin-product-slug").value=p.slug||"";
+  document.getElementById("admin-product-description").value=p.description||"";
+  document.getElementById("admin-product-price").value=p.price??"";
+  document.getElementById("admin-product-discount").value=p.discount_price??"";
+  document.getElementById("admin-product-stock").value=p.stock??0;
+  document.getElementById("admin-product-category").value=p.category_id||"";
+  document.getElementById("admin-product-rating").value=p.rating??0;
+  document.getElementById("admin-product-reviews").value=p.review_count??0;
+  document.getElementById("admin-product-images").value=Array.isArray(p.images)?p.images.join("\n"):"";
+  document.getElementById("admin-product-sizes").value=Array.isArray(p.sizes)?p.sizes.join(", "):""; renderAdminSizePriceFields(p.sizes||[],p.variant_prices||{});
+  document.getElementById("admin-product-bestseller").checked=!!p.bestseller;
+  document.getElementById("admin-product-new").checked=!!p.is_new;
+  document.getElementById("admin-product-active").checked=!!p.is_active;
+  document.getElementById("admin-product-save").textContent="Update product";
+  form.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+async function uploadAdminImages(files){
+  const uploaded=[];
+  for(const file of Array.from(files||[])){
+    if(!file.type || !file.type.startsWith("image/")) continue;
+    const ext=(file.name.split(".").pop()||"jpg").toLowerCase().replace(/[^a-z0-9]/g,"")||"jpg";
+    const path=`products/${Date.now()}-${crypto.randomUUID()}.${ext}`;
+    const {error}=await supabaseClient.storage.from("product-images").upload(path,file,{contentType:file.type,upsert:false});
+    if(error) throw error;
+    const {data}=supabaseClient.storage.from("product-images").getPublicUrl(path);
+    if(data?.publicUrl) uploaded.push(data.publicUrl);
+  }
+  return uploaded;
+}
+
+
+async function cleanupReplacedProductImages(oldImages, newImages){
+  try{
+    const oldList = Array.isArray(oldImages) ? oldImages.filter(Boolean) : [];
+    const newSet = new Set(Array.isArray(newImages) ? newImages.filter(Boolean) : []);
+    const bucketName = "product-images";
+
+    const extractPath = (url) => {
+      try{
+        const u = new URL(url);
+        const marker = `/storage/v1/object/public/${bucketName}/`;
+        const i = u.pathname.indexOf(marker);
+        if(i === -1) return null;
+        return decodeURIComponent(u.pathname.slice(i + marker.length));
+      }catch(e){ return null; }
+    };
+
+    const paths = oldList
+      .map(extractPath)
+      .filter(Boolean)
+      .filter(path => {
+        const matchingUrl = Array.from(newSet).some(url => extractPath(url) === path);
+        return !matchingUrl;
+      });
+
+    if(paths.length){
+      const { error } = await supabaseClient.storage
+        .from(bucketName)
+        .remove(paths);
+      if(error) console.warn("Old product image cleanup failed:", error);
+    }
+  }catch(e){
+    console.warn("Old product image cleanup skipped:", e);
+  }
+}
+
+async function saveAdminProduct(e){
+  e.preventDefault();
+  const user=getCurrentUser(); if(!user || user.role!=="admin"){showToast("Admin access required");return;}
+  const id=document.getElementById("admin-product-id").value.trim();
+  let oldProductImagesForCleanup=[];
+  if(id){
+    const {data:oldProduct,error:oldProductError}=await supabaseClient.from("products").select("images").eq("id",id).maybeSingle();
+    if(oldProductError){ console.error("Could not read existing product images",oldProductError); showToast("Could not load existing product"); return; }
+    oldProductImagesForCleanup=Array.isArray(oldProduct?.images)?[...oldProduct.images]:[];
+  }
+  const name=document.getElementById("admin-product-name").value.trim();
+  const slug=(document.getElementById("admin-product-slug").value.trim()||name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,""));
+  const description=document.getElementById("admin-product-description").value.trim();
+  const price=Number(document.getElementById("admin-product-price").value||0);
+  const discountRaw=document.getElementById("admin-product-discount").value.trim();
+  const discount_price=discountRaw===""?null:Number(discountRaw);
+  const stock=Math.max(0,Math.floor(Number(document.getElementById("admin-product-stock").value||0)));
+  const category_id=document.getElementById("admin-product-category").value||null;
+  const rating=Math.min(5,Math.max(0,Number(document.getElementById("admin-product-rating").value||0)));
+  const review_count=Math.max(0,Math.floor(Number(document.getElementById("admin-product-reviews").value||0)));
+  let images=document.getElementById("admin-product-images").value.split(/\n+/).map(x=>x.trim()).filter(Boolean);
+  const imageFiles=document.getElementById("admin-product-image-files")?.files || [];
+  const sizes=document.getElementById("admin-product-sizes").value.split(",").map(x=>x.trim()).filter(Boolean);
+  const variant_prices=collectAdminSizePrices();
+  if(!name || !Number.isFinite(price) || price<0){showToast("Enter a product name and valid price");return;}
+  if(discount_price!=null && (!Number.isFinite(discount_price) || discount_price<0 || discount_price>price)){showToast("Discount price must be between 0 and the normal price");return;}
+  for(const [size,v] of Object.entries(variant_prices)){ if(!Number.isFinite(v) || v<0){showToast(`Enter a valid price for size ${size}`);return;} }
+  const saveBtn=document.getElementById("admin-product-save"); saveBtn.disabled=true;
+  try{
+    if(imageFiles.length){
+      showToast(id?"Uploading replacement image(s)…":"Uploading product images…");
+      const uploaded=await uploadAdminImages(imageFiles);
+      // When editing an existing product, choosing new files replaces its current
+      // Storage-backed images. This prevents old files from accumulating.
+      images=id ? uploaded : [...images,...uploaded];
+    }
+  }catch(err){
+    console.error("Image upload failed",err);
+    saveBtn.disabled=false;
+    showToast(err.message||"Could not upload image");
+    return;
+  }
+  const payload={name,slug,description,price,discount_price,stock,category_id,rating,review_count,images,sizes,variant_prices,bestseller:document.getElementById("admin-product-bestseller").checked,is_new:document.getElementById("admin-product-new").checked,is_active:document.getElementById("admin-product-active").checked,updated_at:new Date().toISOString()};
+  let error;
+  if(id){ ({error}=await supabaseClient.from("products").update(payload).eq("id",id)); }
+  else { ({error}=await supabaseClient.from("products").insert(payload)); }
+  saveBtn.disabled=false;
+  if(error){console.error("Product save failed",error);showToast(error.message||"Could not save product");return;}
+  showToast(id?"Product updated":"Product added");
+  resetAdminProductForm();
+  await cleanupReplacedProductImages(
+    oldProductImagesForCleanup,
+    payload.images || []
+  );
+  await loadSupabaseData();
+  await renderAdminProducts();
+}
+
+async function toggleAdminProduct(id,active){
+  const user=getCurrentUser(); if(!user || user.role!=="admin"){showToast("Admin access required");return;}
+  const {error}=await supabaseClient.from("products").update({is_active:!active,updated_at:new Date().toISOString()}).eq("id",id);
+  if(error){console.error(error);showToast("Could not update product");return;}
+  showToast(!active?"Product is now visible":"Product hidden");
+  await loadSupabaseData(); await renderAdminProducts();
+}
+
+document.addEventListener("click",async e=>{
+  const wish=e.target.closest("[data-wish-id]");
+  if(!wish) return;
+  e.preventDefault();
+  e.stopPropagation();
+  await toggleWish(wish.dataset.wishId,wish,e);
+},true);
+
+document.addEventListener("change",e=>{
+  const select=e.target.closest("[data-order-status]");
+  if(select) updateOrderStatus(select.dataset.orderStatus,select.value);
+});
+
+document.addEventListener("click",async e=>{
+  const edit=e.target.closest("[data-edit-product]");
+  if(edit){ const rows=await getAdminProducts(); const p=rows.find(x=>x.id===edit.dataset.editProduct); if(p){ await loadAdminCategories(); fillAdminProductForm(p); } return; }
+  const toggle=e.target.closest("[data-toggle-product]");
+  if(toggle){ await toggleAdminProduct(toggle.dataset.toggleProduct,toggle.dataset.active==="true"); return; }
+});
+
+const adminUsageRefreshBtn=document.getElementById("admin-usage-refresh-btn");
+if(adminUsageRefreshBtn) adminUsageRefreshBtn.addEventListener("click",refreshAdminUsage);
+const adminStorageScanBtn=document.getElementById("admin-storage-scan-btn");
+if(adminStorageScanBtn) adminStorageScanBtn.addEventListener("click",scanAdminStorage);
+document.addEventListener("click",e=>{ const b=e.target.closest("[data-storage-delete]"); if(b){ const path=b.getAttribute("data-storage-delete"); if(path && confirm("Delete this unused Storage image?")) deleteAdminStorageFile(path); }});
+const adminRefreshBtn=document.getElementById("admin-refresh-btn");
+if(adminRefreshBtn) adminRefreshBtn.addEventListener("click",renderAdminOrdersView);
+const adminStatusFilter=document.getElementById("admin-status-filter");
+if(adminStatusFilter) adminStatusFilter.addEventListener("change",renderAdminOrdersView);
+const adminNewProductBtn=document.getElementById("admin-new-product-btn");
+if(adminNewProductBtn) adminNewProductBtn.addEventListener("click",async()=>{await loadAdminCategories();const f=document.getElementById("admin-product-form");f.reset();document.getElementById("admin-product-id").value="";renderAdminSizePriceFields([],{});document.getElementById("admin-product-active").checked=true;if(document.getElementById("admin-product-image-files")) document.getElementById("admin-product-image-files").value="";document.getElementById("admin-product-save").textContent="Save product";f.style.display="block";f.scrollIntoView({behavior:"smooth",block:"start"});});
+const adminSizesInput=document.getElementById("admin-product-sizes");
+if(adminSizesInput) adminSizesInput.addEventListener("input",()=>{
+  const sizes=adminSizesInput.value.split(",").map(x=>x.trim()).filter(Boolean);
+  const existing={}; document.querySelectorAll("[data-size-price]").forEach(i=>{if(i.value.trim()!=="") existing[i.dataset.sizePrice]=i.value;});
+  renderAdminSizePriceFields(sizes,existing);
+});
+
+const adminProductForm=document.getElementById("admin-product-form");
+if(adminProductForm) adminProductForm.addEventListener("submit",saveAdminProduct);
+const adminProductCancel=document.getElementById("admin-product-cancel");
+if(adminProductCancel) adminProductCancel.addEventListener("click",resetAdminProductForm);
+
+function renderWishlistPage(){
+  const items = products.filter(p=>wishlist.has(p.id));
+  const grid = document.getElementById("wishlist-grid");
+  const empty = document.getElementById("wishlist-empty");
+  if(items.length===0){
+    grid.style.display = "none";
+    empty.style.display = "block";
+    return;
+  }
+  grid.style.display = "grid";
+  empty.style.display = "none";
+  grid.innerHTML = items.map(productCard).join("");
+}
+
+function renderCheckoutPage(){
+  const user = getCurrentUser();
+  document.getElementById("checkout-name").value = user ? user.name : "";
+  document.getElementById("checkout-email").value = user ? user.email : "";
+  document.getElementById("checkout-error").style.display = "none";
+  const subtotal = cartSubtotal();
+  const delivery = subtotal >= 50 || subtotal === 0 ? 0 : 8;
+  document.getElementById("checkout-summary").innerHTML = `
+    ${cart.map(i=>`
+      <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:10px;">
+        <span>${i.name} × ${i.qty}</span><span>$${(i.price*i.qty).toFixed(2)}</span>
+      </div>
+    `).join("")}
+    <div class="cart-subtotal" style="border-top:1px solid var(--line); padding-top:12px; margin-top:12px;"><span>Subtotal</span><span>$${subtotal.toFixed(2)}</span></div>
+    <div class="cart-subtotal"><span>Delivery</span><span>${delivery===0 ? "Free" : "$"+delivery.toFixed(2)}</span></div>
+    <div class="cart-subtotal" style="font-weight:600;"><span>Total</span><span>$${(subtotal+delivery).toFixed(2)}</span></div>
+  `;
+}
+
+document.getElementById("login-form").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const email=document.getElementById("login-email").value.trim().toLowerCase();
+  const password=document.getElementById("login-password").value;
+  const errorEl=document.getElementById("login-error"), errorText=document.getElementById("login-error-text");
+  const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+  if(error || !data.user){ errorText.textContent="Incorrect email or password."; errorEl.style.display="flex"; return; }
+  errorEl.style.display="none"; await cacheSupabaseUser(data.user);
+  showToast("Welcome back, " + (getCurrentUser()?.name||"Customer").split(" ")[0]); navigate("/");
+});
+
+document.getElementById("signup-form").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const name=document.getElementById("signup-name").value.trim();
+  const email=document.getElementById("signup-email").value.trim().toLowerCase();
+  const password=document.getElementById("signup-password").value;
+  const errorEl=document.getElementById("signup-error"), errorText=document.getElementById("signup-error-text");
+  if(!name || !email){ errorText.textContent="Please fill in all fields."; errorEl.style.display="flex"; return; }
+  if(password.length<6){ errorText.textContent="Password must be at least 6 characters."; errorEl.style.display="flex"; return; }
+  const {data,error}=await supabaseClient.auth.signUp({email,password,options:{data:{full_name:name}}});
+  if(error){ errorText.textContent=error.message || "Could not create account."; errorEl.style.display="flex"; return; }
+  errorEl.style.display="none";
+  if(data.user){
+    await supabaseClient.from("profiles").upsert({id:data.user.id,full_name:name,email});
+    if(data.session){ await cacheSupabaseUser(data.user); showToast("Account created — welcome, " + name.split(" ")[0]); navigate("/"); }
+    else { showToast("Account created. Please check your email to confirm."); navigate("/login"); }
+  }
+});
+
+document.getElementById("account-logout-btn").addEventListener("click", logout);
+
+document.getElementById("forgot-form").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const email=document.getElementById("forgot-email").value.trim();
+  const errorEl=document.getElementById("forgot-error"), errorText=document.getElementById("forgot-error-text"), successEl=document.getElementById("forgot-success");
+  if(!email){ errorText.textContent="Please enter your email."; errorEl.style.display="flex"; return; }
+  const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{redirectTo:window.location.href.split("#")[0]});
+  if(error){ errorText.textContent=error.message || "Unable to send reset email."; errorEl.style.display="flex"; successEl.style.display="none"; return; }
+  errorEl.style.display="none"; successEl.style.display="block";
+});
+
+document.getElementById("checkout-form").addEventListener("submit", async function(e){
+  e.preventDefault();
+  if(cart.length===0){ showToast("Your cart is empty."); navigate("/cart"); return; }
+  const user = getCurrentUser();
+  if(!user){ navigate("/login"); return; }
+  const name = document.getElementById("checkout-name").value.trim();
+  const email = document.getElementById("checkout-email").value.trim();
+  const phone = document.getElementById("checkout-phone").value.trim();
+  const address = document.getElementById("checkout-address").value.trim();
+  const city = document.getElementById("checkout-city").value.trim();
+  const postal = document.getElementById("checkout-postal").value.trim();
+  const errorEl = document.getElementById("checkout-error");
+  const errorText = document.getElementById("checkout-error-text");
+  if(!name || !email || !phone || !address || !city || !postal){
+    errorText.textContent = "Please fill in all fields.";
+    errorEl.style.display = "flex";
+    return;
+  }
+  errorEl.style.display = "none";
+
+  // Always re-check live stock immediately before creating the order.
+  const stockOK = await validateCartStock(false);
+  if(!stockOK){
+    errorText.textContent = "Some items do not have enough stock for the requested quantity. Please reduce the quantity and try again.";
+    errorEl.style.display = "flex";
+    renderCart();
+    return;
+  }
+
+  const subtotal = cartSubtotal();
+  const delivery = subtotal >= 50 ? 0 : 8;
+  const orderNumber = generateOrderNumber();
+  const orderItems = cart.map(i=>({
+    product_id: products.find(p=>p.id===i.id)?.dbId || null,
+    name:i.name, image:i.image, size:i.size||null, color:i.color||null, qty:i.qty, price:i.price
+  }));
+  // One atomic Supabase transaction: create the order, create its items, and
+  // decrement stock only when every requested quantity is available.
+  const {data:createdOrder,error:orderError}=await supabaseClient.rpc("create_order_with_stock",{
+    p_order_number:orderNumber, p_user_id:user.id, p_user_email:user.email,
+    p_full_name:name, p_email:email, p_phone:phone, p_address:address, p_city:city,
+    p_postal_code:postal, p_subtotal:subtotal, p_delivery_charge:delivery,
+    p_total:subtotal+delivery, p_items:orderItems
+  });
+  if(orderError){
+    console.error(orderError);
+    errorText.textContent = String(orderError.message||"").toLowerCase().includes("insufficient stock")
+      ? "Some items just went out of stock. Please reduce the quantity and try again."
+      : "Could not place order. Please try again.";
+    errorEl.style.display = "flex";
+    await loadSupabaseData();
+    renderCart();
+    return;
+  }
+  cart=[]; saveCart(); showToast("Order placed successfully — " + createdOrder.order_number); navigate("/orders");
+});
+
+document.getElementById("contact-form").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const user=getCurrentUser();
+  const fields=this.querySelectorAll("input, textarea");
+  const name=fields[0]?.value?.trim()||"", email=fields[1]?.value?.trim()||"", message=fields[2]?.value?.trim()||"";
+  const {error}=await supabaseClient.from("contact_messages").insert({user_id:user?.id||null,name,email,message});
+  if(error){ console.error(error); showToast("Could not send message. Please try again."); return; }
+  showToast("Message sent — we'll get back to you soon"); this.reset();
+});
+
+/* ---------- Toast ---------- */
+let toastTimer;
+function showToast(msg){
+  const t = document.getElementById("toast");
+  const m = document.getElementById("toast-msg");
+  if(m){ m.textContent = msg; } else { t.textContent = msg; }
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove("show"), 2200);
+}
+
+/* ---------- Wishlist (Supabase + local mirror) ---------- */
+let wishlist = new Set(JSON.parse(storage.getItem("northfield_preview_wishlist")||"[]"));
+async function loadWishlist(){
+  const u=getCurrentUser();
+  if(!u) return;
+  try{
+    const {data,error}=await supabaseClient.from("wishlist").select("product_id").eq("user_id",u.id);
+    if(error) throw error;
+    const serverWishlist=(data||[]).map(row=>{
+      const dbp=dbProducts.find(p=>p.id===row.product_id);
+      return dbp?.legacy_id || products.find(p=>p.dbId===row.product_id)?.id || null;
+    }).filter(Boolean);
+    wishlist=new Set(serverWishlist);
+    storage.setItem("northfield_preview_wishlist",JSON.stringify([...wishlist]));
+  }catch(err){ console.warn("Wishlist load failed",err); }
+}
+async function toggleWish(id, btn, ev){
+  ev.stopPropagation(); ev.preventDefault();
+  const user=getCurrentUser();
+  if(!user){ showToast("Please sign in to use your wishlist"); navigate("/login"); return; }
+  const p=products.find(x=>x.id===id);
+  if(!p) return;
+  const dbProductId=p.dbId || dbProducts.find(x=>x.legacy_id===id)?.id;
+  if(!dbProductId){ showToast("Product is not available in the database yet"); return; }
+  if(wishlist.has(id)){
+    const {error}=await supabaseClient.from("wishlist").delete().eq("user_id",user.id).eq("product_id",dbProductId);
+    if(error){ console.error("Wishlist remove failed",error); showToast("Could not remove from wishlist"); return; }
+    wishlist.delete(id);
+  }else{
+    const {error}=await supabaseClient.from("wishlist").insert({user_id:user.id,product_id:dbProductId});
+    if(error && error.code!=="23505"){ console.error("Wishlist add failed",error); showToast("Could not add to wishlist"); return; }
+    wishlist.add(id);
+  }
+  storage.setItem("northfield_preview_wishlist",JSON.stringify([...wishlist]));
+  btn.classList.toggle("active",wishlist.has(id));
+  if(parseHash().path === "/account") renderAccountPage();
+  if(parseHash().path === "/wishlist") renderWishlistPage();
+}
+
+/* Quick-add from a product card (looks up the product so the inline handler stays clean). */
+function quickAdd(id, size, ev){
+  ev.stopPropagation();
+  const p = products.find(x=>x.id===id);
+  if(!p || p.stock===0) return;
+  addToCart(p, { size: size || undefined, qty:1 });
+}
+
+/* ---------- Rendering helpers ---------- */
+function esc(value){
+  const map={"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","\'":"&#39;"};
+  return String(value ?? "").replace(/[&<>\"']/g, ch => map[ch]);
+}
+function optimizeImageUrl(url){
+  const value=String(url||"").trim();
+  if(!/^https?:\/\/images\.unsplash\.com\//i.test(value)) return value;
+  try{
+    const u=new URL(value);
+    u.searchParams.set("auto","format");
+    u.searchParams.set("fit","crop");
+    u.searchParams.set("w","900");
+    u.searchParams.set("q","72");
+    return u.toString();
+  }catch(e){ return value; }
+}
+function safeImage(url){
+  const value=String(url||"").trim();
+  return /^(https?:\/\/|data:image\/)/i.test(value)
+    ? optimizeImageUrl(value)
+    : "https://images.unsplash.com/photo-1515459961680-58264ee27219?auto=format&fit=crop&w=650&q=72";
+}
+function stars(rating){
+  // FIXED: clean 5-star row with accurate fractional fill, no gaps, no broken clipping
+  const clamped = Math.max(0, Math.min(5, Number(rating)||0));
+  const pct = (clamped / 5) * 100;
+  const star = `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.4 7.1H22l-6.2 4.5 2.4 7.1L12 16.7l-6.2 4.5 2.4-7.1L2 9.6h7.6z"/></svg>`;
+  const five = Array(5).fill(star).join("");
+  // wrapper 78px = 5*14 + 4*2 gap
+  return `<span class="stars" style="position:relative; display:inline-flex; align-items:center; width:78px; height:14px; flex-shrink:0;">
+    <span style="display:inline-flex; gap:2px; color:rgba(176,141,87,0.22); line-height:0;">${five}</span>
+    <span style="position:absolute; top:0; left:0; width:${pct}%; overflow:hidden; display:inline-flex; gap:2px; color:var(--brass); line-height:0; white-space:nowrap;">${five}</span>
+  </span>`;
+}
+function productCard(p){
+  const isSale = p.discountPrice != null;
+  const hasVariants = p.variantPrices && Object.keys(p.variantPrices).length>0;
+  const firstSize = Array.isArray(p.sizes) && p.sizes.length ? p.sizes[0] : "";
+  const cardPrice = hasVariants ? getProductPrice(p,firstSize) : (isSale ? p.discountPrice : p.price);
+  const cat = catName(p.category);
+  const image = safeImage(Array.isArray(p.images) ? p.images[0] : "");
+  const slug = encodeURIComponent(p.slug || "");
+  return `
+    <div class="prod-card" onclick="navigate('/product/${slug}')">
+      <div class="prod-thumb">
+        ${p.isNew ? `<span class="prod-tag">New</span>` : (isSale ? `<span class="prod-tag sale">Sale</span>` : "")}
+        <button class="wish-btn ${wishlist.has(p.id)?'active':''}" data-wish-id="${esc(p.id)}" aria-label="Wishlist" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7.5-4.6-10-9.3C.6 8.4 2.4 5 6 5c2 0 3.5 1 6 3.6C14.5 6 16 5 18 5c3.6 0 5.4 3.4 4 6.7C19.5 16.4 12 21 12 21z"/></svg>
+        </button>
+        <img src="${esc(image)}" alt="${esc(p.name)}" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1515459961680-58264ee27219?auto=format&fit=crop&w=700&q=80';" decoding="async">
+        <button class="quick-add" onclick="quickAdd('${esc(p.id)}', ${JSON.stringify(firstSize)}, event)" type="button">＋ Add to Cart</button>
+      </div>
+      <div class="prod-cat eyebrow">${esc(cat)}</div>
+      <div class="prod-name">${esc(p.name)}</div>
+      <div class="prod-price">
+        ${hasVariants ? `<span>From $${Number(cardPrice||0).toFixed(2)}</span>` : (isSale ? `<span class="was">$${Number(p.price||0).toFixed(2)}</span><span class="now sale">$${Number(p.discountPrice||0).toFixed(2)}</span>` : `<span>$${Number(p.price||0).toFixed(2)}</span>`)}
+      </div>
+      <div class="rating">${stars(p.rating)}<span>(${Number(p.reviewCount||0)})</span></div>
+    </div>
+  `;
+}
+
+/* ---------- Router ---------- */
+function parseHash(){
+  const raw = location.hash.replace(/^#/, "") || "/";
+  const [path, qs] = raw.split("?");
+  const params = new URLSearchParams(qs || "");
+  return { path: path || "/", params };
+}
+function navigate(path){ location.hash = "#" + path; }
+document.addEventListener("click", (e)=>{
+  const el = e.target.closest("[data-link]");
+  if(el){ /* let default hash navigation happen; just update active nav state after */ setTimeout(updateActiveNav, 0); }
+});
+function updateActiveNav(){
+  const raw = location.hash.replace(/^#/, "") || "/";
+  document.querySelectorAll(".nav-links a[data-route], #mobile-nav a[data-route]").forEach(a=>{
+    a.classList.toggle("active", a.dataset.route === raw);
+  });
+}
+
+function showPage(id){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  const target=document.getElementById(id);
+  if(target) target.classList.add("active");
+  const siteFooter=document.querySelector("body > footer");
+  if(siteFooter) siteFooter.style.display=(id==="page-admin")?"none":"";
+  window.scrollTo({top:0, behavior:"instant"});
+}
+
+function router(){
+  const { path, params } = parseHash();
+  closeCart();
+  closeMobileNav();
+  if(path === "/" ){
+    showPage("page-home");
+    renderHome();
+  } else if(path === "/shop"){
+    showPage("page-shop");
+    renderShop(params);
+  } else if(path.startsWith("/product/")){
+    const slug = path.replace("/product/", "");
+    const product = products.find(p=>p.slug===slug);
+    if(product){ showPage("page-product"); renderProduct(product); }
+    else showPage("page-404");
+  } else if(path === "/login"){
+    document.getElementById("login-error").style.display = "none";
+    document.getElementById("login-form").reset();
+    showPage("page-login");
+  } else if(path === "/signup"){
+    document.getElementById("signup-error").style.display = "none";
+    document.getElementById("signup-form").reset();
+    showPage("page-signup");
+  } else if(path === "/forgot-password"){
+    document.getElementById("forgot-error").style.display = "none";
+    document.getElementById("forgot-success").style.display = "none";
+    document.getElementById("forgot-submit-btn").disabled = false;
+    document.getElementById("forgot-form").reset();
+    showPage("page-forgot-password");
+  } else if(path === "/account"){
+    if(!requireAuth("Please sign in to view your account.")) return;
+    showPage("page-account");
+    renderAccountPage();
+  } else if(path === "/orders"){
+    if(!requireAuth("Please sign in to view your orders.")) return;
+    showPage("page-orders");
+    renderOrdersPage();
+  } else if(path === "/admin"){
+    if(!requireAuth("Please sign in to access the admin panel.")) return;
+    if(getCurrentUser()?.role !== "admin"){ showToast("Admin access required"); navigate("/account"); return; }
+    showPage("page-admin");
+    renderAdminPage();
+  } else if(path === "/wishlist"){
+    showPage("page-wishlist");
+    renderWishlistPage();
+  } else if(path === "/cart"){
+    showPage("page-cart");
+  } else if(path === "/checkout"){
+    if(!requireAuth("Please sign in to checkout.")) return;
+    if(cart.length === 0){ showToast("Your cart is empty."); navigate("/cart"); return; }
+    showPage("page-checkout");
+    renderCheckoutPage();
+  } else if(path === "/about"){
+    showPage("page-about");
+  } else if(path === "/contact"){
+    showPage("page-contact");
+  } else if(path === "/faq"){
+    showPage("page-faq");
+  } else if(path === "/shipping-returns"){
+    showPage("page-shipping");
+  } else if(path === "/returns"){
+    showPage("page-returns");
+  } else if(path === "/privacy-policy"){
+    showPage("page-privacy");
+  } else if(path === "/terms"){
+    showPage("page-terms");
+  } else {
+    showPage("page-404");
+  }
+  updateActiveNav();
+}
+window.addEventListener("hashchange", router);
+
+/* ---------- Home ---------- */
+function renderHome(){
+  document.getElementById("category-grid").innerHTML = categories.map(c=>`
+    <a href="#/shop?cat=${c.slug}" data-link class="cat-card">
+      <img src="${c.image}" alt="${c.name}" decoding="async">
+      <div class="cat-overlay"></div>
+      <span class="cat-label font-display">${c.name}</span>
+    </a>
+  `).join("");
+
+  // Pad the grid to N cards without ever duplicating a product.
+  function padTo(list, n){
+    const seen = new Set(list.map(p=>p.id));
+    const fillers = products.filter(p=>!seen.has(p.id));
+    return list.concat(fillers).slice(0, n);
+  }
+
+  const bestSellers = products.filter(p=>p.bestseller);
+  document.getElementById("bestseller-grid").innerHTML = padTo(bestSellers, 4).map(productCard).join("");
+
+  const newArrivals = products.filter(p=>p.isNew);
+  document.getElementById("new-grid").innerHTML = padTo(newArrivals, 4).map(productCard).join("");
+
+  document.getElementById("reviews-grid").innerHTML = reviews.map(r=>`
+    <div class="rev-item">
+      ${stars(r.rating)}
+      <p>"${r.comment}"</p>
+      <span class="eyebrow">${r.name}</span>
+    </div>
+  `).join("");
+}
+
+/* ---------- Shop ---------- */
+function renderShop(params){
+  const state = {
+    cat: params.get("cat") || "",
+    q: "",
+    sort: "featured",
+    priceMax: null,
+  };
+
+  document.getElementById("shop-search").value = params.get("q") || "";
+  document.getElementById("shop-sort").value = "featured";
+  document.getElementById("shop-filters-panel").classList.remove("mobile-open");
+
+  document.getElementById("cat-filters").innerHTML = categories.map(c=>`
+    <label class="filter-opt">
+      <input type="radio" name="cat" value="${c.slug}" ${state.cat===c.slug?'checked':''}>
+      ${c.name}
+    </label>
+  `).join("") + `
+    <label class="filter-opt">
+      <input type="radio" name="cat" value="" ${state.cat===''?'checked':''}>
+      All categories
+    </label>
+  `;
+  document.getElementById("price-filters").innerHTML = [
+    ["Under $12", 12], ["Under $16", 16], ["Under $20", 20], ["Any price", null]
+  ].map(([label,val])=>`
+    <label class="filter-opt">
+      <input type="radio" name="price" value="${val}" ${val===null?'checked':''}>
+      ${label}
+    </label>
+  `).join("");
+
+  function apply(){
+    const catInput = document.querySelector('input[name="cat"]:checked');
+    const priceInput = document.querySelector('input[name="price"]:checked');
+    state.cat = catInput ? catInput.value : "";
+    state.priceMax = priceInput && priceInput.value !== "null" ? Number(priceInput.value) : null;
+    state.q = document.getElementById("shop-search").value.trim().toLowerCase();
+    state.sort = document.getElementById("shop-sort").value;
+
+    let list = products.slice();
+    if(state.cat){
+      const catObj = categories.find(c=>c.slug===state.cat);
+      list = list.filter(p=>p.category === catObj?.id);
+    }
+    if(state.q){ list = list.filter(p=>p.name.toLowerCase().includes(state.q)); }
+    if(state.priceMax){ list = list.filter(p=>(p.discountPrice||p.price) <= state.priceMax); }
+
+    if(state.sort==="newest"){ list = list.filter(p=>p.isNew).concat(list.filter(p=>!p.isNew)); }
+    else if(state.sort==="bestselling"){ list = list.filter(p=>p.bestseller).concat(list.filter(p=>!p.bestseller)); }
+    else if(state.sort==="price-asc"){ list.sort((a,b)=>(a.discountPrice||a.price)-(b.discountPrice||b.price)); }
+    else if(state.sort==="price-desc"){ list.sort((a,b)=>(b.discountPrice||b.price)-(a.discountPrice||a.price)); }
+
+    document.getElementById("shop-title").textContent = state.cat ? catName(categories.find(c=>c.slug===state.cat)?.id) : "Shop all";
+    document.getElementById("shop-eyebrow").textContent = `${list.length} pattern${list.length===1?'':'s'}`;
+    document.getElementById("shop-grid").innerHTML = list.map(productCard).join("");
+    document.getElementById("shop-grid").style.display = list.length ? "grid" : "none";
+    document.getElementById("shop-empty").style.display = list.length ? "none" : "block";
+  }
+
+  document.querySelectorAll('input[name="cat"]').forEach(el=>el.addEventListener("change", apply));
+  document.querySelectorAll('input[name="price"]').forEach(el=>el.addEventListener("change", apply));
+  document.getElementById("shop-search").oninput = apply;
+  document.getElementById("shop-sort").onchange = apply;
+
+  apply();
+}
+
+/* ---------- Product detail ---------- */
+function renderProduct(p){
+  let activeImg = 0, activeSize = p.sizes ? p.sizes[0] : null, qty = 1;
+
+  function draw(){
+    const selectedPrice = getProductPrice(p,activeSize);
+    const basePrice = p.price;
+    const hasVariantPrice = p.variantPrices && p.variantPrices[String(activeSize||"")] != null && p.variantPrices[String(activeSize||"")] !== "";
+    const isSale = !hasVariantPrice && p.discountPrice != null;
+    document.getElementById("pdp-root").innerHTML = `
+      <div>
+        <div class="pdp-gallery-main"><img src="${esc(safeImage(p.images[activeImg]))}" alt="${esc(p.name)}" decoding="async"></div>
+        ${p.images.length>1 ? `<div class="pdp-thumbs">${p.images.map((im,i)=>`<img src="${im}" class="${i===activeImg?'active':''}" onclick="window.__pdpSetImg(${i})" decoding="async">`).join("")}</div>` : ""}
+      </div>
+      <div>
+        <nav class="pdp-breadcrumb eyebrow" aria-label="Breadcrumb">
+          <a href="#/shop" data-link>Shop</a> <span>/</span> <a href="#/shop?cat=${catName(p.category).toLowerCase().replace(/[^a-z]+/g,'-')}" data-link style="color:var(--ink);">${catName(p.category)}</a> <span>/</span> <span style="color:var(--ink-soft);">${p.name}</span>
+        </nav>
+        <div class="pdp-sku">${catName(p.category).toUpperCase()}</div>
+        <h1 class="font-display">${esc(p.name)}</h1>
+        <div class="rating" style="margin-bottom:14px;">${stars(p.rating)}<span>(${p.reviewCount} reviews)</span></div>
+        <div class="pdp-price">
+          ${hasVariantPrice ? `<span>$${selectedPrice.toFixed(2)}</span>` : (isSale ? `<span class="was" style="text-decoration:line-through;color:var(--ink-soft);">$${p.price}</span><span style="color:var(--sale);">$${p.discountPrice}</span>` : `<span>$${p.price}</span>`)}
+        </div>
+        <p class="pdp-desc">${esc(p.description)}</p>
+
+        <div class="pdp-includes">
+          <div class="opt-label">Included in every order</div>
+          <ul>
+            <li>Printed on A4, tiled &amp; numbered for easy assembly</li>
+            <li>Full cutting layout &amp; seam allowances</li>
+            <li>Step-by-step instructions with diagrams</li>
+          </ul>
+        </div>
+
+        ${Array.isArray(p.sizes) && p.sizes.length ? `
+        <div class="opt-group">
+          <div class="opt-label">Size / Measurement</div>
+          <div class="opt-pills">${p.sizes.map(s=>`<button class="opt-pill ${s===activeSize?'active':''}" onclick='window.__pdpSetSize(${JSON.stringify(s)})'>${s}</button>`).join("")}</div>
+        </div>` : ""}
+
+        <div class="qty-row">
+          <div class="qty-control">
+            <button onclick="window.__pdpQty(-1)">−</button>
+            <span>${qty}</span>
+            <button onclick="window.__pdpQty(1)">+</button>
+          </div>
+        </div>
+        <div class="stock-note">${p.stock > 0
+          ? `<span class="stock-dot"></span><span>In stock · ${p.stock} available</span>`
+          : `<span class="stock-dot" style="background:var(--sale);"></span><span>Out of stock</span>`}</div>
+        <div style="font-size:14px; color:var(--ink-soft); margin-bottom:12px;">Total: <strong style="color:var(--ink);">$${(selectedPrice*qty).toFixed(2)}</strong></div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; max-width:420px;">
+          <button class="btn-secondary" style="flex:1; min-width:150px;" ${p.stock===0?'disabled':''} onclick="window.__pdpAdd()">Add to Cart</button>
+          <button class="btn-primary" style="flex:1; min-width:150px;" ${p.stock===0?'disabled':''} onclick="window.__pdpBuyNow()">Buy Now</button>
+        </div>
+      </div>
+    `;
+  }
+  window.__pdpSetImg = (i)=>{ activeImg=i; draw(); };
+  window.__pdpSetSize = (s)=>{ activeSize=s; draw(); };
+  window.__pdpQty = (d)=>{
+    const next = Math.max(1, qty + d);
+    if(next > Number(p.stock||0)){
+      showToast(`Only ${Number(p.stock||0)} item(s) available.`);
+      return;
+    }
+    qty = next;
+    draw();
+  };
+  window.__pdpAdd = ()=>{ addToCart(p, { size:activeSize, qty }); };
+  window.__pdpBuyNow = ()=>{
+    if(addToCart(p, { size:activeSize, qty })){ closeCart(); goToCheckout(); }
+  };
+  draw();
+
+  const related = products.filter(r=>r.category===p.category && r.id!==p.id).slice(0,4);
+  document.getElementById("related-root").innerHTML = related.length ? `
+    <h2 class="related-title font-display">Related Patterns</h2>
+    <div class="prod-grid">${related.map(productCard).join("")}</div>
+  ` : "";
+}
+
+/* ---------- Notice dismissal ---------- */
+(()=>{
+  const banner = document.getElementById("notice-banner");
+  const close = document.getElementById("notice-close");
+  if(!banner || !close) return;
+  const HIDE = "northfield_notice_hidden";
+  try { if(storage.getItem(HIDE)) banner.classList.add("hidden"); } catch(e){}
+  close.addEventListener("click", ()=>{
+    banner.classList.add("hidden");
+    try{ storage.setItem(HIDE,"1"); }catch(e){}
+  });
+})();
+
+/* ---------- Back to top ---------- */
+const backtop = document.getElementById("backtop");
+if(backtop){
+  window.addEventListener("scroll", ()=> backtop.classList.toggle("show", window.scrollY > 620), {passive:true});
+  backtop.addEventListener("click", ()=> window.scrollTo({top:0, behavior:"smooth"}));
+}
+
+/* ---------- Scroll reveal ---------- */
+let revealObserver = null;
+try {
+  if (typeof IntersectionObserver !== "undefined") {
+    revealObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); revealObserver.unobserve(e.target); } });
+    }, { threshold:0.12, rootMargin:"0px 0px -40px 0px" });
+  }
+} catch(e){ revealObserver = null; }
+function observeReveals(){
+  document.querySelectorAll(".reveal:not(.in)").forEach(el=>{
+    if(revealObserver) revealObserver.observe(el); else el.classList.add("in");
+  });
+}
+
+/* ---------- Init ---------- */
+renderCart();
+updateAuthUI();
+loadSupabaseData().then(()=>loadWishlist()).then(()=>router());
+observeReveals();
+/* END JAVASCRIPT: everything in this main script can be moved to js/app.js */
+</script><!-- END HTML STRUCTURE -->
+</body>
+</html>
