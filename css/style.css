@@ -139,7 +139,7 @@
   @media(min-width:640px){ .promo{padding:64px 64px;} }
   .promo h2{font-size:28px; max-width:520px; margin-top:12px;}
   @media(min-width:640px){ .promo h2{font-size:34px;} }
-  .promo .btn-secondary{margin-top:24px; border-color:var(--paper); color:var(--paper);}
+  .promo .btn-secondary{margin-top:24px; border-color:var(--paper); color:var(#000000);}
   .promo .btn-secondary:hover{background:var(--paper); color:var(--forest);}
 
   /* Why choose */
